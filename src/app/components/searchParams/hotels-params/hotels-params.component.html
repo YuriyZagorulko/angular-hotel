@@ -4,12 +4,47 @@
   </div>
   <div class="content">
     <div class="search">
-      <div class="place">
-        <div class="place__title">CITY / HOTEL / AREA / BUILDING</div>
-        <div class="place__place"></div>
-        <div class="place__country">India</div>
+      <div class="place" (click)="placeSelect.focus();placeSelect.open();">
+        <div class="content__title">CITY / HOTEL / AREA / BUILDING</div>
+        <div class="content__name" [formGroup]="placeForm">
+          <img src="assets/images/icons/search.svg">
+          <ng-select class="place__name__select"
+            #placeSelect
+            [items]="cities"
+            [selectOnTab]="true"
+            labelForId="age"
+             placeholder="Enter city/ Hotel/ Area/ Building"
+            formControlName="selectedCity"
+            appendTo="body"
+            [clearable]="false"
+            >
+          </ng-select>
+        </div>
+        <div class="content__bottom">India</div>
       </div>
-      <div class="time"></div>
+      <div class="time ngx-daterangepicker-action" (click)="openDatepicker()">
+        <input type="text"
+               ngxDaterangepickerMd
+               [locale]="{format: 'DD/MM/YYYY HH:mm:ss', firstDay: 1}"
+               [(ngModel)]="selectedDate"
+               [showRangeLabelOnInput]="true"
+               [minDate]="minDate"
+                class="date-picker"/>
+        <div class="time__start ngx-daterangepicker-action">
+          <div class="content__title ngx-daterangepicker-action">CHECK-IN</div>
+          <div class="time__date ngx-daterangepicker-action">
+            {{selectedDate.startDate | date}}
+          </div>
+          <div class="content__bottom ngx-daterangepicker-action">{{selectedDate.startDate | date :'EEEE'}}</div>
+        </div>
+        <div class="time__end ngx-daterangepicker-action">
+          <div class="content__title ngx-daterangepicker-action">CHECK-OUT</div>
+          <div class="time__date ngx-daterangepicker-action">
+            {{selectedDate.endDate | date}}
+          </div>
+          <div class="content__bottom ngx-daterangepicker-action">{{selectedDate.endDate | date :'EEEE'}}</div>
+        </div>
+      </div>
       <div class="rooms"></div>
       <div class="reason"></div>
     </div>
@@ -21,7 +56,7 @@
       <div class="recent__time">23 Jan 21 - 24 Jan 21</div>
     </div>
   </div>
-  <button class="button primary">
+  <button class="button primary" (click)="search();">
     SEARCH
   </button>
 </div>

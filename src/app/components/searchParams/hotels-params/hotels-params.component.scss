@@ -7,6 +7,7 @@
     font-size: 14px;
     font-weight: 700;
     text-align: center;
+    padding-bottom: 10px;
   }
   .button{
     display: flex;
@@ -28,7 +29,7 @@
     border-radius: 34px;
     width: 216px;
     padding: 10px;
-    margin-bottom: -32px;
+    margin: 0 auto -24px auto;
     font-size: 24px;
     line-height: 24px;
     font-weight: 700;
@@ -73,10 +74,123 @@
       line-height: 10px;
     }
   }
+  .content{
+    &__title{
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      justify-content: flex-start;
+    }
+    &__name{
+      display: flex;
+      justify-content: flex-start;
+      padding: 10px 0;
+    }
+    &__bottom{
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
   .search{
     display: flex;
     border-radius: 10px;
     border: 1px solid #e7e7e7;
     overflow: hidden;
+    margin-bottom: 20px;
+
+    .place, .rooms, .reason{
+      padding: 10px 20px;
+    }
+    .place, .rooms, .reason{
+      &:hover{
+        background-color: #eaf5ff;
+        cursor: pointer;
+      }
+    }
+    .place{
+      position: relative;
+      width: 435px;
+      border-right: 1px solid #e7e7e7;
+
+      img{
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        left: 30px;
+        z-index: 10000;
+        top: 50px;
+      }
+      &__name{
+        width: 320px;
+
+        &__select{
+          width: 100%;
+        }
+      }
+    }
+    .time{
+      display: flex;
+      flex-direction: row;
+      &__start,&__end{
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: 1px solid #e7e7e7;
+
+        &:hover{
+          background-color: #eaf5ff;
+          cursor: pointer;
+        }
+      }
+
+      &__date{
+        font-size: 20px;
+        line-height: 20px;
+      }
+      &__start{
+
+      }
+      &__end{
+
+      }
+      .date-picker{
+        visibility: hidden;
+        height: 0;
+        box-sizing: border-box;
+        position: absolute;
+      }
+    };
   }
+
+  ::ng-deep{
+    .ng-select .ng-select-container{
+      color: #4a4a4a;
+    }
+    .ng-select .ng-select-container .ng-value-container .ng-input>input{
+      padding-left: 20px;
+    }
+    .ng-select .ng-select-container .ng-value-container .ng-placeholder{
+      padding-left: 20px;
+    }
+    .ng-select.ng-select-single .ng-select-container .ng-value-container, .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value{
+      padding-left: 20px;
+    }
+    .md-drppicker td.active, .md-drppicker td.active:hover{
+      background-color: #008cff;
+      color: #fff;
+    }
+    .md-drppicker td.off, .md-drppicker td.off.end-date, .md-drppicker td.off.in-range, .md-drppicker td.off.start-date{
+      background-color: #fff;
+      border-color: transparent;
+      color: #999;
+    }
+    .md-drppicker .btn{
+      background-color: #008cff;
+    }
+    .ng-arrow-wrapper{
+      display: none;
+    }
+  }
+
 }

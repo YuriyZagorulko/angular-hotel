@@ -9,6 +9,9 @@ import { MainLayoutComponent } from './components/layout/main-layout/main-layout
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/layout/search/search.component';
 import { HotelsParamsComponent } from './components/searchParams/hotels-params/hotels-params.component';
+import {NgSelectModule} from '@ng-select/ng-select';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgxDaterangepickerMd} from 'ngx-daterangepicker-material';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,10 @@ import { HotelsParamsComponent } from './components/searchParams/hotels-params/h
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    NgSelectModule,
+    ReactiveFormsModule,
+    NgxDaterangepickerMd.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
