@@ -1,0 +1,86 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-top: 5px;
+
+  &__left{
+    a {
+      display: flex;
+      height: 100%;
+      img {
+        width: 113px;
+        height: 36px;
+      }
+    }
+  }
+  &__right{
+    ul{
+      display: flex;
+      list-style: none;
+
+      li{
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        background-color: rgba(255,255,255,.15);
+        box-shadow: 0 1px 4px 0 rgb(0 0 0 / 20%);
+        margin-left: 5px;
+        border-radius: 4px;
+        box-sizing: content-box;
+        height: 37px;
+        span#dropdownBasic1{
+          display: inline-block;
+          padding: 5px 10px;
+          font-size: 12px;
+
+          span{
+            display: inline-block;
+            vertical-align: middle;
+
+            &:first-child{
+              margin-right: 10px;
+            }
+          }
+          button{
+            font-size: 14px;
+          }
+        }
+        button{
+          display: flex;
+          flex-direction: row;
+
+          span{
+            display: flex;
+            align-self: center;
+
+            &:first-child{
+              margin-right: 10px;
+            }
+          }
+        }
+        .flag{
+          display: flex;
+          width: 15px;
+          height: 12px;
+          background-image: url("/assets/images/shared/flagSprite.png");
+          background-repeat: no-repeat;
+          background-size: 16px 38px;
+
+          &.in{
+            background-position: 0 0;
+          }
+          &.ae{
+            background-position: 0 -12px;
+          }
+          &.us{
+            background-position: 0 -24px;
+          }
+        }
+      }
+    }
+    .dropdown{
+      height: 100%;
+    }
+  }
+}

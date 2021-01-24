@@ -1,0 +1,116 @@
+.container{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .nav-container{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+  .navigation{
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    width: fit-content;
+    margin: 0 auto 0 auto;
+    box-shadow: 0 1px 7px 0 rgb(0 0 0 / 40%);
+
+    &__item{
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      margin: 0 10px 0 22px;
+      cursor: pointer;
+      align-items: center;
+
+      &__img{
+        display: flex;
+        background-image: url("/assets/images/sprites/commonHeaderSprite5.png");
+        height: 34px;
+        width: 40px;
+        background-size: 300px 267px;
+
+        &.flight{
+          background-position: -4px -38px;
+        }
+        &.hotel{
+          background-position: -50px -37px;
+        }
+        &.villa{
+          background-position: -105px -153px;
+        }
+        &.ball{
+          background-position: -92px -37px;
+          width: 25px;
+        }
+        &.train{
+          background-position: -179px -37px;
+        }
+        &.bus{
+          background-position: -121px -38px;
+          width: 25px;
+        }
+        &.visa{
+          background-position: -153px -154px;
+        }
+        &.cab{
+          background-position: -154px -39px;
+          width: 25px;
+        }
+        &.charter{
+          background-position: -122px -72px;
+        }
+        &.dots{
+          background-position: -257px -37px;
+        }
+      }
+
+      &.active{
+        .navigation__item__img{
+          &.hotel{
+            background-position: -50px -1px;
+          }
+        }
+      }
+    }
+    &__text{
+      display: flex;
+      color: #4a4a4a;
+      font-size: 14px;
+      padding: 8px;
+      margin-bottom: 3px;
+    }
+    .dropdown-toggle{
+      &:after{
+        display: none;
+      }
+    }
+    .arrow{
+      display: flex;
+      align-self: center;
+      margin: 0 0 2px 2px;
+      border-top: 2px solid #4a4a4a;
+      border-right: 2px solid #4a4a4a;
+      width: 5px;
+      height: 5px;
+      padding: 2px;
+      transform: rotate(135deg) skew(7deg, 7deg);
+    }
+    .more-text{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .search-params{
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 50px 20px 0 20px;
+    margin-top: 40px;
+    position: relative;
+  }
+}
