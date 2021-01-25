@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Moment } from 'moment';
 import * as moment from 'moment';
@@ -15,9 +15,13 @@ type dateRange = {
 })
 export class HotelsParamsComponent implements OnInit {
   @ViewChild(DaterangepickerDirective, { static: false }) pickerDirective: DaterangepickerDirective;
+  reasonDefault = 'Select a Reason (optional)';
+  reason = '';
   selectedDate: dateRange;
   minDate = moment();
   placeForm: FormGroup;
+  rooms: [{ adults: number; children: number; ages: number; trackingId: number}];
+  guestsNumber = 0;
   cities = [
     'Adilabad',
     'Anantapur',
@@ -43,7 +47,7 @@ export class HotelsParamsComponent implements OnInit {
     'Eluru',
     'Kadapa',
   ];
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.placeForm = this.fb.group({
@@ -56,9 +60,29 @@ export class HotelsParamsComponent implements OnInit {
   }
   search(): void {
     console.log(this.selectedDate);
+    console.log(this.reason);
+    console.log(this.rooms);
+    console.log(this.placeForm.value);
   }
   openDatepicker(): void {
     this.pickerDirective.open();
+  }
+  setReason(reason): void {
+    console.log(reason);
+    this.reason = reason;
+  }
+  onRoomsChange(e): void{
+      this.rooms = e;
+      this.setNumberOfGuests();
+      this.cdr.detectChanges();
+  }
+  setNumberOfGuests(): void{
+    this.guestsNumber = 0;
+    if (this.rooms){
+      for (const room of this.rooms){
+        this.guestsNumber += room.adults + room.children;
+      }
+    }
   }
 
 }

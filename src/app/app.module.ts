@@ -12,6 +12,7 @@ import { HotelsParamsComponent } from './components/searchParams/hotels-params/h
 import {NgSelectModule} from '@ng-select/ng-select';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxDaterangepickerMd} from 'ngx-daterangepicker-material';
+import { GuestsComponent } from './components/searchParams/hotels-params/guests/guests.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {NgxDaterangepickerMd} from 'ngx-daterangepicker-material';
     MainLayoutComponent,
     SearchComponent,
     HotelsParamsComponent,
+    GuestsComponent,
   ],
   imports: [
     BrowserModule,

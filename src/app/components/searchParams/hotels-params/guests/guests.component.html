@@ -1,0 +1,46 @@
+<div class="container">
+  <form [formGroup]="guestsForm" (change)="onFormChange()">
+    <div class="guest-group" formArrayName="rooms" *ngFor="let room of guestsForm.controls.rooms?.value; let i = index; trackBy:trackByFn">
+      <div [formGroupName]="i">
+        <div class="group-head">
+          <div class="group-head__left">
+            <div class="title">Room {{i + 1}}</div>
+<!--            editId === room['trackingId']-->
+            <div class="subtitle" *ngIf="editId === i; else edit">Adults (12y +)</div>
+            <ng-template #edit>
+              <div class="edit">
+                <div class="subtitle">Adults: <strong>{{room.adults}}</strong> Children: <strong>{{room.children}}</strong></div>
+                <a class="edit__link" (click)="onEdit(i)">Edit</a>
+              </div>
+            </ng-template>
+          </div>
+          <div class="group-head__right">
+            <a class="edit" (click)="removeGroup(i)">Remove</a>
+          </div>
+        </div>
+        <div class="controls" *ngIf="editId === i">
+          <div class="adults">
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="adults">
+              <label class="btn-primary " ngbButtonLabel *ngFor="let i of adultsArray">
+                <input type="radio" [value]="i" ngbButton> {{i}}
+              </label>
+            </div>
+          </div>
+          <div class="children">
+            <div class="subtitle">Children (Age 12y and below)</div>
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="children">
+              <label class="btn-primary " ngbButtonLabel *ngFor="let i of childrenArray">
+                <input type="radio" [value]="i" ngbButton> {{i}}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <button class="btn btn-primary" (click)="addGroup()">Add Room +</button>
+<!--    <button (click)="onSubmit()">Submit</button>-->
+  </form>
+
+</div>

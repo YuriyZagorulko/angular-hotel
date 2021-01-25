@@ -80,6 +80,7 @@
       font-weight: 700;
       display: flex;
       justify-content: flex-start;
+      white-space: nowrap;
     }
     &__name{
       display: flex;
@@ -95,7 +96,6 @@
     display: flex;
     border-radius: 10px;
     border: 1px solid #e7e7e7;
-    overflow: hidden;
     margin-bottom: 20px;
 
     .place, .rooms, .reason{
@@ -111,6 +111,7 @@
       position: relative;
       width: 435px;
       border-right: 1px solid #e7e7e7;
+      border-radius: 8px 0 0 8px;
 
       img{
         position: absolute;
@@ -143,10 +144,10 @@
           cursor: pointer;
         }
       }
-
       &__date{
         font-size: 20px;
         line-height: 20px;
+        white-space: nowrap;
       }
       &__start{
 
@@ -160,7 +161,45 @@
         box-sizing: border-box;
         position: absolute;
       }
-    };
+    }
+    .rooms{
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #e7e7e7;
+      &__content{
+        width: 200px;
+        margin-top: 18px;
+      }
+      &__numbers{
+        font-size: 20px;
+        line-height: 20px;
+        white-space: nowrap;
+
+        &:after{
+          display: none;
+        }
+      }
+    }
+    .reason{
+      border-radius: 0 8px 8px 0;
+      display: flex;
+      flex-direction: column;
+      &__value{
+        .dropdown-toggle{
+          color: #4a4a4a;
+        }
+      }
+      &__option{
+        color: #4a4a4a;
+        display: block;
+        max-width: 123px;
+        white-space: normal;
+
+        &:after{
+          display: none;
+        }
+      }
+    }
   }
 
   ::ng-deep{

@@ -45,8 +45,27 @@
           <div class="content__bottom ngx-daterangepicker-action">{{selectedDate.endDate | date :'EEEE'}}</div>
         </div>
       </div>
-      <div class="rooms"></div>
-      <div class="reason"></div>
+      <div class="rooms" (click)="guestsDropdown.open()">
+        <div class="content__title">GUESTS</div>
+        <div class="rooms__content">
+          <div class="reason__value" ngbDropdown #guestsDropdown="ngbDropdown">
+            <span id="dropdownGuests" class="rooms__numbers" ngbDropdownToggle><strong>{{rooms?.length ? rooms.length : 0}}</strong> Rooms <strong>{{guestsNumber}}</strong> Guests </span>
+            <div ngbDropdownMenu aria-labelledby="dropdownGuests">
+              <app-guests (newValue)="onRoomsChange($event)"></app-guests>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reason" (click)="reasonDropdown.open()">
+        <div class="content__title">TRAVELLING FOR</div>
+        <div class="reason__value" ngbDropdown #reasonDropdown="ngbDropdown">
+          <span id="dropdownBasic" class="reason__option" ngbDropdownToggle>{{ reason ? reason : reasonDefault}}</span>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic">
+            <button ngbDropdownItem value="Work" (click)="setReason('Work')">Work</button>
+            <button ngbDropdownItem (click)="setReason('Leisure')">Leisure</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="recent">
