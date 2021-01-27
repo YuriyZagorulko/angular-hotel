@@ -8,11 +8,11 @@ import { HotelsComponent } from './components/hotels/hotels.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/layout/search/search.component';
-import { HotelsParamsComponent } from './components/searchParams/hotels-params/hotels-params.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxDaterangepickerMd} from 'ngx-daterangepicker-material';
-import { GuestsComponent } from './components/searchParams/hotels-params/guests/guests.component';
+import {SharedModule} from './shared/shared.module';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,6 @@ import { GuestsComponent } from './components/searchParams/hotels-params/guests/
     HotelsComponent,
     MainLayoutComponent,
     SearchComponent,
-    HotelsParamsComponent,
-    GuestsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,9 +29,14 @@ import { GuestsComponent } from './components/searchParams/hotels-params/guests/
     NgSelectModule,
     ReactiveFormsModule,
     NgxDaterangepickerMd.forRoot(),
-    FormsModule
+    FormsModule,
+    SharedModule,
+    AgmCoreModule.forRoot({
+      apiKey: ''
+    }) // need to add API KEY
   ],
   providers: [],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

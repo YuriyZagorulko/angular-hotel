@@ -1,0 +1,77 @@
+<div class="wrapper">
+  <div class="content global-width-limiter">
+    <div class="content__left">
+      <a routerLink="/listing/hotels">
+        <img src="assets/images/shared/logo@2x.png">
+      </a>
+      <div class="nav-container">
+        <div class="navigation">
+          <a class="navigation__item">
+            <span class="navigation__item__img flight"></span>
+            <span class="navigation__text">Flights</span>
+          </a>
+          <a class="navigation__item" [routerLink]="['/hotels']" [routerLinkActive]="['active']">
+            <span class="navigation__item__img hotel"></span>
+            <span class="navigation__text">Hotels</span>
+          </a>
+          <a class="navigation__item">
+            <span class="navigation__item__img villa"></span>
+            <span class="navigation__text">Villas & Apts</span>
+          </a>
+          <a class="navigation__item">
+            <span class="navigation__item__img ball"></span>
+            <span class="navigation__text">Holidays</span>
+          </a>
+          <a class="navigation__item">
+            <span class="navigation__item__img train"></span>
+            <span class="navigation__text">Trains</span>
+          </a>
+          <a class="navigation__item">
+            <span class="navigation__item__img bus"></span>
+            <span class="navigation__text">Buses</span>
+          </a>
+          <a class="navigation__item">
+            <span class="navigation__item__img visa"></span>
+            <span class="navigation__text">Visa</span>
+          </a>
+          <a class="navigation__item">
+            <span class="navigation__item__img cab"></span>
+            <span class="navigation__text">Cabs</span>
+          </a>
+          <a class="navigation__item">
+            <span class="navigation__item__img charter"></span>
+            <span class="navigation__text">Charter Flights</span>
+          </a>
+          <div ngbDropdown class="d-inline-block">
+            <div class="navigation__item more" id="dropdownBasic1" ngbDropdownToggle>
+              <span class="navigation__item__img dots"></span>
+              <div class="more-text">
+                <span class="navigation__text">More</span>
+                <span class="arrow"></span>
+              </div>
+            </div>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Action - 1</button>
+              <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container__right">
+      <div ngbDropdown>
+        <span id="dropdownBasic2" ngbDropdownToggle><span class="flag in"></span><span>INR</span></span>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+          <button ngbDropdownItem><span class="flag in"></span>INDIA</button>
+          <button ngbDropdownItem><span class="flag ae"></span>AUE</button>
+          <button ngbDropdownItem><span class="flag us"></span>US</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  <div class="filters">-->
+<!--    <app-hotels-params></app-hotels-params>-->
+<!--  </div>-->
+</div>

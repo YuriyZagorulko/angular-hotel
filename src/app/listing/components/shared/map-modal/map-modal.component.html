@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="navigation">
+    <div class="top">
+
+    </div>
+    <div class="hotels">
+      <ul>
+        <li *ngFor="let hotel of hotels">
+          <app-hotel-small [hotel]="hotel"></app-hotel-small>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="map">
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div>
+</div>

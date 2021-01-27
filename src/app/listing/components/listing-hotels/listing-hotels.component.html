@@ -1,1 +1,65 @@
-<p>listing-hotels works!</p>
+<div class="container">
+  <div class="map-header">
+    <div class="map-content global-width-limiter">
+      <div class="map-content__static">
+        <div class="map-header__left">
+          <div class="map-header__title">Hotels, Villas, Apartments and more in Delhi</div>
+        </div>
+        <div class="map-header__right">
+          <a (click)="open(content);">
+            <img src="assets/images/shared/mapBgSmall.png">
+          </a>
+
+          <div class="map-modal">
+            <ng-template #content let-modal>
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Search Map</h4>
+                <div  class="close nav-link" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </div>
+              </div>
+              <div class="modal-body">
+                <app-map-modal></app-map-modal>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-blue" (click)="modal.close('Save click')">OK</button>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+      <div class="map-content__sticky">
+        <div class="map-header__sort">
+          <div class="map-header__dropdown">
+            <div ngbDropdown class="d-inline-block">
+              <div class="dropdown__title more" id="dropdownBasic1" ngbDropdownToggle>
+                <div class="dropdown-text">
+                  <strong>Sort By: </strong>
+                  <span class="dropdown-text__value"> Popularity</span>
+                  <span class="arrow"></span>
+                </div>
+              </div>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem>Price - Low to High</button>
+                <button ngbDropdownItem>Price - High to Low</button>
+                <button ngbDropdownItem>User Rating - High to Low</button>
+              </div>
+            </div>
+          </div>
+          <div class="map-header__text">
+            | Showing 1680 properties in Delhi
+          </div>
+        </div>
+        <div class="map-header__search">
+          <input placeholder="Enter location or property name">
+          <img src="assets/images/icons/search.svg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+
+  </div>
+</div>

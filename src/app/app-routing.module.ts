@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'hotels'},
       { path: 'hotels', component: HotelsComponent },
-    ]
+    ],
   },
   {
     path: 'listing',
