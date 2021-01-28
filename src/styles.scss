@@ -58,3 +58,22 @@ agm-map {
 rating >span{
   outline: none;
 }
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .global-width-limiter{
+    max-width: 780px;
+    width: 780px;
+  }
+  .tablet-hide{
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .global-width-limiter{
+    max-width: 360px;
+    width: 360px;
+  }
+  .mobile-hide{
+    display: none;
+  }
+}

@@ -2,6 +2,14 @@
   background: #f2f2f2;
   background-repeat: no-repeat;
   background-image: linear-gradient(to bottom,#051322,#15457c);
-  background-size: 100% 454px;
+  background-size: 100% 525px;
   min-height: 100vh;
+}
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .main-container{
+    background-size: 100% 175px;
+  }
+}
+@media screen and (max-width: 800px) {
+
 }

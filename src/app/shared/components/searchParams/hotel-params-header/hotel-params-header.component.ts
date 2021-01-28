@@ -1,19 +1,20 @@
 import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Moment } from 'moment';
-import * as moment from 'moment';
 import {DaterangepickerDirective} from 'ngx-daterangepicker-material';
+import * as moment from 'moment';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Moment} from 'moment';
 
 type dateRange = {
   startDate: Moment,
   endDate: Moment
 };
 @Component({
-  selector: 'app-hotels-params',
-  templateUrl: './hotels-params.component.html',
-  styleUrls: ['./hotels-params.component.scss']
+  selector: 'app-hotel-params-header',
+  templateUrl: './hotel-params-header.component.html',
+  styleUrls: ['./hotel-params-header.component.scss']
 })
-export class HotelsParamsComponent implements OnInit {
+export class HotelParamsHeaderComponent implements OnInit {
+
   @ViewChild(DaterangepickerDirective, { static: false }) pickerDirective: DaterangepickerDirective;
   isSearchVisible = false;
   reasonDefault = 'Select a Reason (optional)';
@@ -73,9 +74,9 @@ export class HotelsParamsComponent implements OnInit {
     this.reason = reason;
   }
   onRoomsChange(e): void{
-      this.rooms = e;
-      this.setNumberOfGuests();
-      this.cdr.detectChanges();
+    this.rooms = e;
+    this.setNumberOfGuests();
+    this.cdr.detectChanges();
   }
   setNumberOfGuests(): void{
     this.guestsNumber = 0;
@@ -94,4 +95,5 @@ export class HotelsParamsComponent implements OnInit {
       }
     });
   }
+
 }

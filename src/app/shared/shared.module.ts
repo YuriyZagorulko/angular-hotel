@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {GuestsComponent} from './components/searchParams/hotels-params/guests/guests.component';
+import {GuestsComponent} from './components/searchParams/guests/guests.component';
 import {HotelsParamsComponent} from './components/searchParams/hotels-params/hotels-params.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -9,6 +9,7 @@ import {NgbDropdownModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HotelSmallComponent } from './components/hotel-small/hotel-small.component';
 import { HotelFullComponent } from './components/hotel-full/hotel-full.component';
 import {RatingModule} from 'ngx-bootstrap/rating';
+import { HotelParamsHeaderComponent } from './components/searchParams/hotel-params-header/hotel-params-header.component';
 
 
 
@@ -17,7 +18,8 @@ import {RatingModule} from 'ngx-bootstrap/rating';
     GuestsComponent,
     HotelsParamsComponent,
     HotelSmallComponent,
-    HotelFullComponent
+    HotelFullComponent,
+    HotelParamsHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import {RatingModule} from 'ngx-bootstrap/rating';
     HotelsParamsComponent,
     GuestsComponent,
     HotelSmallComponent,
+    HotelParamsHeaderComponent,
   ],
 })
 export class SharedModule { }
