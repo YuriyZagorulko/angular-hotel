@@ -20,7 +20,7 @@
         </div>
         <div class="controls" *ngIf="editId === i">
           <div class="adults">
-            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" formControlName="adults">
+            <div class="btn-group btn-group-toggle adults-group" ngbRadioGroup name="radioBasic" formControlName="adults">
               <label class="btn-primary " ngbButtonLabel *ngFor="let i of adultsArray">
                 <input type="radio" [value]="i" ngbButton> {{i}}
               </label>

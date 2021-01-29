@@ -105,6 +105,9 @@
     border: 1px solid #e7e7e7;
     margin-bottom: 20px;
 
+    &__dropdown{
+      position: relative;
+    }
     &__value{
       color: #4a4a4a;
     }
@@ -252,5 +255,104 @@
       display: none;
     }
   }
+}
 
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .container{
+    .search{
+      flex-wrap: wrap;
+
+      .place{
+        width: 50%;
+        box-sizing: border-box;
+      }
+      .time{
+        width: 50%;
+        box-sizing: border-box;
+
+        &__start{
+          width: 50%;
+        }
+        &__end{
+          width: 50%;
+          border-right: none;
+        }
+      }
+      .reason{
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        box-sizing: border-box;
+        border-top: 1px solid #e7e7e7;
+
+        &__value{
+          margin-top: 0;
+        }
+        &__option{
+          max-width: 250px;
+          padding-left: 20px;
+        }
+      }
+      .rooms{
+        display: flex;
+        box-sizing: border-box;
+        width: 50%;
+        border-top: 1px solid #e7e7e7;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .container{
+    padding: 0;
+    flex-wrap: wrap;
+    .search{
+      flex-wrap: wrap;
+
+      .place{
+        width: 100%;
+        box-sizing: border-box;
+        border-right: none;
+      }
+      .time{
+        width: 100%;
+        box-sizing: border-box;
+        border-top: 1px solid #e7e7e7;
+        &__start{
+          width: 100%;
+        }
+        &__end{
+          width: 100%;
+          border-right: none;
+        }
+      }
+      .reason{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        box-sizing: border-box;
+        border-top: 1px solid #e7e7e7;
+        border-radius: 0;
+        &__value{
+          margin-top: 0;
+        }
+        &__option{
+          max-width: 250px;
+          padding-left: 20px;
+        }
+      }
+      .rooms{
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+        border-top: 1px solid #e7e7e7;
+        border-right: none;
+      }
+    }
+    .content{
+      &__name{
+          width: 280px;
+      }
+    }
+  }
 }

@@ -43,3 +43,39 @@
     padding-top: 5px;
   }
 }
+
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+
+}
+@media screen and (max-width: 800px) and (min-width: 600px) {
+  .container{
+    padding: 10px;
+    box-sizing: border-box;
+    .btn-group-toggle{
+      .btn-primary{
+
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .container{
+    padding: 10px;
+    min-width: 270px;
+    box-sizing: border-box;
+    width: 270px;
+
+    .adults-group{
+      flex-wrap: wrap;
+      .btn-primary{
+        margin-bottom: 5px;
+      }
+    }
+  }
+  ::ng-deep{
+    .btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn:not(:first-child){
+      border-radius: 0;
+    }
+  }
+}

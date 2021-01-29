@@ -70,8 +70,8 @@ rating >span{
 }
 @media screen and (max-width: 800px) {
   .global-width-limiter{
-    max-width: 360px;
-    width: 360px;
+    max-width: 100%;
+    width: 100%;
   }
   .mobile-hide{
     display: none;
