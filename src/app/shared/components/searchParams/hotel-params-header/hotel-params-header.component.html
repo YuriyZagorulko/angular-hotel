@@ -1,12 +1,8 @@
 <div class="container">
-  <div class="title">
-    Book Domestic and International hotels and homestays. To list your property <a href="/">click here</a>
-  </div>
   <div class="content">
     <div class="search">
-      <div class="place" (click)="focusSearch( placeSelect, searchDropdown)">
-        <div class="content__title">CITY / HOTEL / AREA / BUILDING</div>
-
+      <div class="place box" (click)="focusSearch( placeSelect, searchDropdown)">
+        <div class="content__title">CITY, AREA OR PROPERTY</div>
         <div class="search__dropdown" ngbDropdown #searchDropdown="ngbDropdown">
           <span id="dropdownSearch" class="rooms__numbers" ngbDropdownToggle>
             <span class="search__value">{{placeForm?.value?.selectedCity ? placeForm?.value?.selectedCity  : 'Delhi'}}</span>
@@ -28,10 +24,6 @@
             </div>
           </div>
         </div>
-
-
-
-        <div class="content__bottom">India</div>
       </div>
       <div class="time ngx-daterangepicker-action" (click)="openDatepicker()">
         <input type="text"
@@ -41,22 +33,20 @@
                [showRangeLabelOnInput]="true"
                [minDate]="minDate"
                class="date-picker"/>
-        <div class="time__start ngx-daterangepicker-action">
+        <div class="time__start box ngx-daterangepicker-action">
           <div class="content__title ngx-daterangepicker-action">CHECK-IN</div>
           <div class="time__date ngx-daterangepicker-action">
             {{selectedDate.startDate | date}}
           </div>
-          <div class="content__bottom ngx-daterangepicker-action">{{selectedDate.startDate | date :'EEEE'}}</div>
         </div>
-        <div class="time__end ngx-daterangepicker-action">
+        <div class="time__end box ngx-daterangepicker-action">
           <div class="content__title ngx-daterangepicker-action">CHECK-OUT</div>
           <div class="time__date ngx-daterangepicker-action">
             {{selectedDate.endDate | date}}
           </div>
-          <div class="content__bottom ngx-daterangepicker-action">{{selectedDate.endDate | date :'EEEE'}}</div>
         </div>
       </div>
-      <div class="rooms" (click)="guestsDropdown.open()">
+      <div class="rooms box" (click)="guestsDropdown.open()">
         <div class="content__title">GUESTS</div>
         <div class="rooms__content">
           <div class="rooms__value" ngbDropdown #guestsDropdown="ngbDropdown">
@@ -67,23 +57,6 @@
           </div>
         </div>
       </div>
-      <div class="reason" (click)="reasonDropdown.open()">
-        <div class="content__title">TRAVELLING FOR</div>
-        <div class="reason__value" ngbDropdown #reasonDropdown="ngbDropdown">
-          <span id="dropdownBasic" class="reason__option" ngbDropdownToggle>{{ reason ? reason : reasonDefault}}</span>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic">
-            <button ngbDropdownItem value="Work" (click)="setReason('Work')">Work</button>
-            <button ngbDropdownItem (click)="setReason('Leisure')">Leisure</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="recent">
-    <div class="recent__title">Recent Searches:</div>
-    <div class="recent__box">
-      <div class="recent__text">  Delhi, India</div>
-      <div class="recent__time">23 Jan 21 - 24 Jan 21</div>
     </div>
   </div>
   <button class="button primary" (click)="search();">

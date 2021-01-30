@@ -1,14 +1,8 @@
 .container{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   color: #4a4a4a;
-  .title{
-    color: #4a4a4a;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-    padding-bottom: 10px;
-  }
+
   .button{
     display: flex;
     align-self: center;
@@ -27,60 +21,26 @@
     border: 0;
     text-align: center;
     border-radius: 34px;
-    width: 216px;
+    width: 170px;
     padding: 10px;
-    margin: 0 auto -24px auto;
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 900;
     justify-content: center;
+    margin-left: 40px;
   }
-  .recent{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 20px;
-
-    &__title{
-      font-size: 12px;
-      line-height: 12px;
-      font-weight: 700;
-      display: flex;
-      align-self: center;
-    }
-    &__box{
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      -webkit-flex-direction: column;
-      -moz-box-orient: vertical;
-      -moz-box-direction: normal;
-      flex-direction: column;
-      padding: 8px 10px;
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius: 4px;
-      margin-left: 10px;
-      background: #f2f2f2;
-    }
-    &__text{
-      font-size: 12px;
-      line-height: 12px;
-      margin-bottom: 3px;
-    }
-    &__time{
-      font-size: 10px;
-      line-height: 10px;
-    }
+  .box{
+    background-color: rgba(255,255,255, 0.1);
+    border-radius: 4px;
+    margin-right: 5px;
   }
   .content{
     &__title{
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 12px;
       display: flex;
       justify-content: flex-start;
       white-space: nowrap;
+      color: #0084ff;
     }
     &__name{
       display: flex;
@@ -89,8 +49,9 @@
       width: 300px;
     }
     &__bottom{
-      display: flex;
-      justify-content: flex-start;
+      font-size: 16px;
+      line-height: 16px;
+      color: #fff;
     }
     ::ng-deep{
       .dropdown-menu.show{
@@ -102,26 +63,23 @@
   .search{
     display: flex;
     border-radius: 10px;
-    border: 1px solid #e7e7e7;
-    margin-bottom: 20px;
+    padding: 10px 0;
 
     &__value{
-      color: #4a4a4a;
+      font-size: 16px;
+      line-height: 16px;
+      color: #fff;
     }
     .place, .rooms, .reason{
       padding: 10px 20px;
     }
     .place, .rooms, .reason{
       &:hover{
-        background-color: #eaf5ff;
         cursor: pointer;
       }
     }
     .place{
       position: relative;
-      width: 435px;
-      border-right: 1px solid #e7e7e7;
-      border-radius: 8px 0 0 8px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -150,17 +108,15 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        border-right: 1px solid #e7e7e7;
 
         &:hover{
-          background-color: #eaf5ff;
           cursor: pointer;
         }
       }
       &__date{
-        font-size: 20px;
-        line-height: 20px;
-        white-space: nowrap;
+        font-size: 16px;
+        line-height: 16px;
+        color: #fff;
       }
       &__start{
 
@@ -178,42 +134,21 @@
     .rooms{
       display: flex;
       flex-direction: column;
-      border-right: 1px solid #e7e7e7;
 
       &__value{
         .dropdown-toggle{
-          color: #4a4a4a;
+          font-size: 16px;
+          line-height: 16px;
+          color: #fff;
         }
       }
       &__content{
-        width: 200px;
-        margin-top: 18px;
+        margin-top: 0;
       }
       &__numbers{
         font-size: 20px;
         line-height: 20px;
         white-space: nowrap;
-
-        &:after{
-          display: none;
-        }
-      }
-    }
-    .reason{
-      border-radius: 0 8px 8px 0;
-      display: flex;
-      flex-direction: column;
-      &__value{
-        margin-top: 15px;
-        .dropdown-toggle{
-          color: #4a4a4a;
-        }
-      }
-      &__option{
-        color: #4a4a4a;
-        display: block;
-        max-width: 123px;
-        white-space: normal;
 
         &:after{
           display: none;

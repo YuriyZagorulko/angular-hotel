@@ -113,6 +113,53 @@
       justify-content: center;
     }
   }
+  .content{
+    display: flex;
+    flex-direction: row;
+
+    .filters{
+      width: 230px;
+      margin-right: 20px;
+
+      .price{
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+
+        &__numbers{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+    }
+    .hotels{
+      width: 100%;
+
+      &__list{
+        padding-top: 40px;
+        &__item{
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .filters{
+      padding-top: 40px;
+
+      &__title{
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+    }
+    .title{
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
 }
 .close{
   cursor: pointer;

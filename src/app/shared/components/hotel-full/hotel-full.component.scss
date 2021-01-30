@@ -1,0 +1,61 @@
+.wrapper{
+  border: solid 1px #bababa;
+  display: flex;
+  flex-direction: row;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgb(138 107 118 / 8%);
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px;
+
+  &:hover{
+    border-color: #008cff;
+    background: #f4faff;
+  }
+  .left{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    &__image{
+      img{
+        display: flex;
+        width: 263px;
+        height: 162px;
+      }
+    }
+    &__content{
+      margin-left: 20px;
+      width: 100%;
+
+      .title{
+        display: flex;
+        flex-direction: row;
+        font-weight: 800;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+
+        &__content{
+          font-size: 22px;
+          line-height: 22px;
+          padding-right: 20px;
+        }
+        &__stars{
+          width: 100px;
+        }
+      }
+      .place{
+        color: #9b9b9b;
+        font-size: 12px;
+        line-height: 12px;
+        font-weight: 700;
+      }
+    }
+  }
+  .right{
+    display: flex;
+    flex-direction: column;
+    width: 185px;
+  }
+}

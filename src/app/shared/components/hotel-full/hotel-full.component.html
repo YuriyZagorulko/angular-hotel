@@ -1,16 +1,19 @@
 <div class="wrapper">
   <div class="left">
     <div class="left__image">
-
+      <img src="{{hotel.img ? hotel.img : 'assets/images/shared/hotel.webp'}}">
     </div>
     <div class="left__content">
       <div class="title">
         <div class="title__content">
-
+          {{hotel.name}}
         </div>
         <div class="title__stars">
-
+          <rating [(ngModel)]="hotel.stars" [max]="5" [readonly]="true"></rating>
         </div>
+      </div>
+      <div class="place">
+        Near Nehru Place
       </div>
     </div>
   </div>

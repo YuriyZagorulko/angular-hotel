@@ -1,0 +1,33 @@
+.wrapper{
+  .filters{
+
+    .filter{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 12px;
+
+      &__title{
+        color: #4a4a4a;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 0 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 190px;
+        white-space: nowrap;
+      }
+      &__number{
+        font-size: 12px;
+        line-height: 12px;
+        color: #9b9b9b;
+        display: flex;
+        align-self: center;
+        margin-left: auto;
+      }
+      input{
+        display: flex;
+        align-self: center;
+      }
+    }
+  }
+}

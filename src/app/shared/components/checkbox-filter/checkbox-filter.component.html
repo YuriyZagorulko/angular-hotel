@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="filters">
+    <div class="filter" *ngFor="let filter of filters">
+      <input type="checkbox" [(ngModel)]="filter.isChecked" (input)="changeValue()">
+      <div class="filter__title">
+        {{filter.text}}
+      </div>
+      <div class="filter__number">
+        ({{filter.number}})
+      </div>
+    </div>
+  </div>
+</div>

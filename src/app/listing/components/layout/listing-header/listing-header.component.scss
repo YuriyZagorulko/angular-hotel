@@ -1,6 +1,6 @@
 .wrapper{
   background-color: white;
-  padding: 20px 0 5px 0;
+  padding: 20px 0 0 0;
   .content{
     display: flex;
     flex-direction: row;
@@ -115,6 +115,9 @@
     }
   }
 
+  .filters{
+    background-color: #0a223d;;
+  }
   ::ng-deep{
     .container__right {
       .dropdown-toggle {

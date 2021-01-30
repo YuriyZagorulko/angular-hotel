@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {IHotel} from '../../../helpers/types/hotels';
+import {hotelsList} from '../../../helpers/constants/hotels';
+import {popular} from '../../../helpers/constants/filters';
+
 
 @Component({
   selector: 'app-listing-hotels',
@@ -8,8 +12,13 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./listing-hotels.component.scss']
 })
 export class ListingHotelsComponent implements OnInit {
+
+  priceMin = 0;
+  priceMax = 35000;
+  priceValue = 0;
   closeResult = '';
-  isOpened: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  hotels: IHotel [] = hotelsList;
+  popularFilters = popular;
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
@@ -30,5 +39,8 @@ export class ListingHotelsComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+  logValue(): void{
+    console.log(this.priceValue);
   }
 }

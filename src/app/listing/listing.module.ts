@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SharedModule} from '../shared/shared.module';
 import { MapModalComponent } from './components/shared/map-modal/map-modal.component';
 import {AgmCoreModule} from '@agm/core';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -23,7 +24,8 @@ import {AgmCoreModule} from '@agm/core';
         ListingRoutingModule,
         NgbModule,
         SharedModule,
-        AgmCoreModule
+        AgmCoreModule,
+        FormsModule
     ]
 })
 export class ListingModule { }

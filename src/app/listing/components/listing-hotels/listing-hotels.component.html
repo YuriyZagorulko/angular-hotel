@@ -61,8 +61,32 @@
     </div>
   </div>
 
+  <div class="content global-width-limiter">
+    <div class="filters">
+      <div class="title">
+        Select Filters
+      </div>
+      <div class="price">
+        <div class="filters__title">Price Per Night</div>
+        <input type="range" min="{{priceMin}}" max="{{priceMax}}" [(ngModel)]="priceValue" (input)="logValue();"  id="myRange">
+        <div class="price__numbers">
+          <div class="price__left">₹ {{priceValue}}</div>
+          <div class="price__right">₹ {{priceMax}}</div>
+        </div>
+      </div>
+      <div class="popular">
+        <app-checkbox-filter [filters]="popularFilters"></app-checkbox-filter>
+      </div>
+    </div>
+    <div class="hotels">
+      <div class="hotels__head">
 
-  <div>
-
+      </div>
+      <div class="hotels__list">
+        <div class="hotels__list__item" *ngFor="let hotel of hotels">
+          <app-hotel-full [hotel]="hotel"></app-hotel-full>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

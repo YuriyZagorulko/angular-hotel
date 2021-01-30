@@ -10,6 +10,7 @@ import { HotelSmallComponent } from './components/hotel-small/hotel-small.compon
 import { HotelFullComponent } from './components/hotel-full/hotel-full.component';
 import {RatingModule} from 'ngx-bootstrap/rating';
 import { HotelParamsHeaderComponent } from './components/searchParams/hotel-params-header/hotel-params-header.component';
+import { CheckboxFilterComponent } from './components/checkbox-filter/checkbox-filter.component';
 
 
 
@@ -19,7 +20,8 @@ import { HotelParamsHeaderComponent } from './components/searchParams/hotel-para
     HotelsParamsComponent,
     HotelSmallComponent,
     HotelFullComponent,
-    HotelParamsHeaderComponent
+    HotelParamsHeaderComponent,
+    CheckboxFilterComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,8 @@ import { HotelParamsHeaderComponent } from './components/searchParams/hotel-para
     GuestsComponent,
     HotelSmallComponent,
     HotelParamsHeaderComponent,
+    HotelFullComponent,
+    CheckboxFilterComponent,
   ],
 })
 export class SharedModule { }
