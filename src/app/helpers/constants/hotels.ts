@@ -19,7 +19,7 @@ export const hotelsList: IHotel [] = [
     moreOptions: [],
     place: 'Ajmere Gate',
     price: 446,
-    rating: 7.2,
+    rating: 4.2,
     reviews: 33,
     stars: 3
   },

@@ -11,6 +11,7 @@ export class CheckboxFilterComponent implements OnInit {
   @Input() showMax: number;
   @Input() filters: IFilter [];
   @Output() newValue = new EventEmitter<IFilter []>();
+  isOpened = false;
   constructor() { }
 
   ngOnInit(): void {

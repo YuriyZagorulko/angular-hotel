@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {IHotel} from '../../../helpers/types/hotels';
 import {hotelsList} from '../../../helpers/constants/hotels';
-import {popular} from '../../../helpers/constants/filters';
+import {distance, popular, propertyType, starRating} from '../../../helpers/constants/filters';
 
 
 @Component({
@@ -19,6 +19,9 @@ export class ListingHotelsComponent implements OnInit {
   closeResult = '';
   hotels: IHotel [] = hotelsList;
   popularFilters = popular;
+  starFilters = starRating;
+  distanceFilters = distance;
+  typeFilters = propertyType;
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {

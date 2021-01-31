@@ -1,13 +1,31 @@
 <div class="wrapper">
   <div class="filters">
-    <div class="filter" *ngFor="let filter of filters">
-      <input type="checkbox" [(ngModel)]="filter.isChecked" (input)="changeValue()">
-      <div class="filter__title">
-        {{filter.text}}
-      </div>
-      <div class="filter__number">
-        ({{filter.number}})
+    <div class="filter" *ngFor="let filter of filters; let i = index">
+      <div *ngIf="!showMax || ( i < showMax || isOpened)" class="filter__content">
+        <div class="top">
+          <input type="checkbox" [(ngModel)]="filter.isChecked" (input)="changeValue()">
+          <div class="filter__title">
+            {{filter.text}}
+          </div>
+          <div class="filter__number">
+            ({{filter.number}})
+          </div>
+        </div>
+        <div *ngIf="filter.description" class="filter__description">
+          ({{filter.description}})
+        </div>
       </div>
     </div>
   </div>
+  <div class="show" *ngIf="showMax">
+    <div class="show-more" *ngIf="isOpened === false; else hide" (click)="isOpened = true">
+      Show all {{filters.length}}
+    </div>
+    <ng-template #hide>
+      <div class="show-more" (click)="isOpened = false">
+        Hide
+      </div>
+    </ng-template>
+  </div>
+
 </div>

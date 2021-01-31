@@ -1,6 +1,8 @@
 .wrapper{
   background-color: white;
   padding: 20px 0 0 0;
+  position: relative;
+  z-index: 1;
   .content{
     display: flex;
     flex-direction: row;
@@ -116,7 +118,9 @@
   }
 
   .filters{
-    background-color: #0a223d;;
+    background-color: #0a223d;
+    position: sticky;
+    top: 0;
   }
   ::ng-deep{
     .container__right {
