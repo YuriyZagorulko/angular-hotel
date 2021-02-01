@@ -59,7 +59,16 @@ rating >span{
   outline: none;
 }
 
+.desktop-hide{
+  display: none;
+}
+app-accordion-filters{
+  width: 100%;
+}
 @media screen and (max-width: 1200px) and (min-width: 800px) {
+  .desktop-hide{
+    display: flex;
+  }
   .global-width-limiter{
     max-width: 780px;
     width: 780px;
@@ -67,8 +76,14 @@ rating >span{
   .tablet-hide{
     display: none;
   }
+  .modal-dialog{
+    min-width: 100vw;
+  }
 }
 @media screen and (max-width: 800px) {
+  .desktop-hide{
+    display: flex;
+  }
   .global-width-limiter{
     max-width: 100%;
     width: 100%;

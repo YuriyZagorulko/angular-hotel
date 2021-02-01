@@ -188,3 +188,38 @@
   }
 
 }
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+
+    .button{
+      margin-left: 0;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+
+    .search{
+      display: flex;
+      flex-direction: column;
+
+      .box{
+        margin-bottom: 10px;
+      }
+    }
+    .button{
+      margin-left: 0;
+    }
+  }
+}

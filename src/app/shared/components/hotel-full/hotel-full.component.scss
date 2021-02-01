@@ -28,6 +28,9 @@
     &__content{
       margin-left: 20px;
       width: 100%;
+      justify-content: space-between;
+      display: flex;
+      flex-direction: column;
 
       .title{
         display: flex;
@@ -112,6 +115,92 @@
     }
     &__see{
       color: #0084ff;
+    }
+  }
+}
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .wrapper{
+    .left{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__image{
+        margin-bottom: 10px;
+        display: flex;
+        align-self: flex-start;
+      }
+      &__content{
+        justify-content: center;
+
+        .title{
+          text-align: left;
+        }
+        .price{
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .wrapper{
+
+    flex-direction: column;
+    .left{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      &__image{
+        margin-bottom: 10px;
+        display: flex;
+        align-self: center;
+      }
+      &__content{
+        justify-content: center;
+
+        .title{
+          text-align: center;
+          justify-content: center;
+        }
+        .place{
+          display: flex;
+          justify-content: center;
+        }
+        .free{
+          &__top, &__bottom{
+            display: flex;
+            justify-content: center;
+          }
+        }
+        .choice{
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+        }
+        .price{
+          text-align: center;
+          justify-content: center;
+        }
+      }
+    }
+    .right{
+      width: 100%;
+      .top,.bottom{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        .rating{
+          width: 100%;
+        }
+      }
+      .top{
+        padding-bottom: 10px;
+      }
     }
   }
 }

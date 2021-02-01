@@ -13,6 +13,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxDaterangepickerMd} from 'ngx-daterangepicker-material';
 import {SharedModule} from './shared/shared.module';
 import { AgmCoreModule } from '@agm/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AgmCoreModule } from '@agm/core';
     NgxDaterangepickerMd.forRoot(),
     FormsModule,
     SharedModule,
+    BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: ''
     }) // need to add API KEY

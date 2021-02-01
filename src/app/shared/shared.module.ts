@@ -11,6 +11,8 @@ import { HotelFullComponent } from './components/hotel-full/hotel-full.component
 import {RatingModule} from 'ngx-bootstrap/rating';
 import { HotelParamsHeaderComponent } from './components/searchParams/hotel-params-header/hotel-params-header.component';
 import { CheckboxFilterComponent } from './components/checkbox-filter/checkbox-filter.component';
+import { AccordionFiltersComponent } from './components/accordion-filters/accordion-filters.component';
+import {AccordionModule} from 'ngx-bootstrap/accordion';
 
 
 
@@ -21,7 +23,8 @@ import { CheckboxFilterComponent } from './components/checkbox-filter/checkbox-f
     HotelSmallComponent,
     HotelFullComponent,
     HotelParamsHeaderComponent,
-    CheckboxFilterComponent
+    CheckboxFilterComponent,
+    AccordionFiltersComponent
   ],
   imports: [
     CommonModule,
@@ -32,14 +35,16 @@ import { CheckboxFilterComponent } from './components/checkbox-filter/checkbox-f
     NgbDropdownModule,
     NgbModule,
     RatingModule,
+    AccordionModule,
   ],
-  exports: [
-    HotelsParamsComponent,
-    GuestsComponent,
-    HotelSmallComponent,
-    HotelParamsHeaderComponent,
-    HotelFullComponent,
-    CheckboxFilterComponent,
-  ],
+    exports: [
+        HotelsParamsComponent,
+        GuestsComponent,
+        HotelSmallComponent,
+        HotelParamsHeaderComponent,
+        HotelFullComponent,
+        CheckboxFilterComponent,
+        AccordionFiltersComponent,
+    ],
 })
 export class SharedModule { }

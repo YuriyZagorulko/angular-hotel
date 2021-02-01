@@ -8,6 +8,15 @@
     flex-direction: row;
     justify-content: space-between;
 
+    &__head{
+      display: flex;
+      flex-direction: row;
+      padding-right: 18px;
+
+      a{
+        padding-left: 5px;
+      }
+    }
     &__left{
       display: flex;
       flex-direction: row;
@@ -29,7 +38,7 @@
           display: flex;
           flex-direction: column;
           text-decoration: none;
-          margin: 0 10px 0 22px;
+          margin: 0 22px 0 0;
           cursor: pointer;
           align-items: center;
 
@@ -122,28 +131,66 @@
     position: sticky;
     top: 0;
   }
-  ::ng-deep{
-    .container__right {
-      .dropdown-toggle {
-        cursor: pointer;
-        color: #4a4a4a;
-        font-size: 12px;
-        line-height: 12px;
-        font-weight: 700;
+}
 
-        &:after {
-          margin-left: 15px;
-          border: solid #008cff;
-          border-width: 0 2px 2px 0 !important;
-          display: inline-block;
-          padding: 2px;
-          transform: rotate(45deg);
-          -webkit-transform: rotate(45deg);
-          content: "";
-          position: relative;
-          top: 0;
-          right: 4px;
-        }
+::ng-deep{
+  .dropdown-toggle {
+    cursor: pointer;
+    color: #4a4a4a;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 700;
+
+    &:after {
+      margin-left: 15px;
+      border: solid #008cff;
+      border-width: 0 2px 2px 0 !important;
+      display: inline-block;
+      padding: 2px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      content: "";
+      position: relative;
+      top: 0;
+      right: 4px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .wrapper {
+    .content {
+      &__left {
+        display: flex;
+        flex-direction: column;
+      }
+      &__head{
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 10px;
+      }
+      .navigation{
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .wrapper {
+    .content {
+      &__left {
+        display: flex;
+        flex-direction: column;
+      }
+      &__head{
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px 10px 5px ;
+      }
+      .navigation{
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
     }
   }

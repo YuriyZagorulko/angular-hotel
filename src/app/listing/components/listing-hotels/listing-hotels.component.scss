@@ -32,7 +32,7 @@
             cursor: pointer;
             padding-right: 25px;
             &:after{
-              top: 8px;
+              top: 2px;
               right: 8px;
               position: absolute;
               border-color: #0084ff;;
@@ -42,6 +42,7 @@
         .dropdown-text{
           color: #4a4a4a;
           position: relative;
+          font-size: 16px;
           &__value{
             color: #0084ff;
           }
@@ -109,14 +110,19 @@
     }
     &__text{
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
+      align-items: center;
+
+      span{
+        padding-right: 5px;
+      }
     }
   }
   .content{
     display: flex;
     flex-direction: row;
-
+    padding: 0 15px;
     .filters{
       width: 230px;
       margin-right: 20px;
@@ -182,4 +188,71 @@
 }
 .modal-header{
   border-bottom: none;
+}
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .container{
+    .map-header{
+      &__title{
+        font-size: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .container{
+    .map-header{
+      &__title{
+        font-size: 30px;
+        line-height: 30px;
+      }
+
+      .map-content{
+        &__static{
+          display: flex;
+          flex-direction: column;
+        }
+        &__sticky{
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: center;
+        }
+      }
+      &__title{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+      &__right{
+        a{
+          display: flex;
+          justify-content: center;
+        }
+      }
+      &__sort{
+        justify-content: center;
+        padding-top: 10px;
+      }
+      &__search{
+        align-self: center;
+      }
+      &__sort{
+        flex-direction: column;
+        align-items: center;
+      }
+      &__dropdown{
+        padding: 5px 0;
+      }
+    }
+    .content{
+      display: flex;
+      flex-direction: column;
+
+      .filters{
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  }
 }

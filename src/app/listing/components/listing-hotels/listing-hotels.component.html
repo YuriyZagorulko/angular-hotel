@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="map-header__text">
-            | Showing 1680 properties in Delhi
+            <span class="mobile-hide">|</span> Showing 1680 properties in Delhi
           </div>
         </div>
         <div class="map-header__search">
@@ -66,29 +66,34 @@
       <div class="title">
         Select Filters
       </div>
-      <div class="price">
-        <div class="filters__title">Price Per Night</div>
-        <input type="range" min="{{priceMin}}" max="{{priceMax}}" [(ngModel)]="priceValue" (input)="logValue();"  id="myRange">
-        <div class="price__numbers">
-          <div class="price__left">₹ <input [(ngModel)]="priceValue"></div>
-          <div class="price__right">₹ <input  [(ngModel)]="priceMax"></div>
+      <div class="mobile-hide">
+        <div class="price">
+          <div class="filters__title">Price Per Night</div>
+          <input type="range" min="{{priceMin}}" max="{{priceMax}}" [(ngModel)]="priceValue" (input)="logValue();"  id="myRange">
+          <div class="price__numbers">
+            <div class="price__left">₹ <input [(ngModel)]="priceValue"></div>
+            <div class="price__right">₹ <input  [(ngModel)]="priceMax"></div>
+          </div>
+        </div>
+        <div class="popular">
+          <div class="filters__title">Popular filters</div>
+          <app-checkbox-filter [filters]="popularFilters"></app-checkbox-filter>
+        </div>
+        <div class="popular">
+          <div class="filters__title">Star rating</div>
+          <app-checkbox-filter [filters]="starFilters"></app-checkbox-filter>
+        </div>
+        <div class="distance">
+          <div class="filters__title">Distance from the centre of Delhi</div>
+          <app-checkbox-filter [filters]="distanceFilters"></app-checkbox-filter>
+        </div>
+        <div class="property-type">
+          <div class="filters__title">Distance from the centre of Delhi</div>
+          <app-checkbox-filter [filters]="typeFilters" [showMax]="4"></app-checkbox-filter>
         </div>
       </div>
-      <div class="popular">
-        <div class="filters__title">Popular filters</div>
-        <app-checkbox-filter [filters]="popularFilters"></app-checkbox-filter>
-      </div>
-      <div class="popular">
-        <div class="filters__title">Star rating</div>
-        <app-checkbox-filter [filters]="starFilters"></app-checkbox-filter>
-      </div>
-      <div class="distance">
-        <div class="filters__title">Distance from the centre of Delhi</div>
-        <app-checkbox-filter [filters]="distanceFilters"></app-checkbox-filter>
-      </div>
-      <div class="property-type">
-        <div class="filters__title">Distance from the centre of Delhi</div>
-        <app-checkbox-filter [filters]="typeFilters" [showMax]="4"></app-checkbox-filter>
+      <div class="filters__mobile desktop-hide tablet-hide">
+        <app-accordion-filters></app-accordion-filters>
       </div>
     </div>
     <div class="hotels">

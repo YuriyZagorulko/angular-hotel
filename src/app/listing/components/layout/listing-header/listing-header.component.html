@@ -1,9 +1,20 @@
 <div class="wrapper">
   <div class="content global-width-limiter">
     <div class="content__left">
-      <a routerLink="/listing/hotels">
-        <img src="assets/images/shared/logo@2x.png">
-      </a>
+      <div class="content__head">
+        <a routerLink="/listing/hotels">
+          <img src="assets/images/shared/logo@2x.png">
+        </a>
+
+        <div ngbDropdown class="desktop-hide">
+          <span id="dropdownBasic3" ngbDropdownToggle><span class="flag in"></span><span>INR</span></span>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+            <button ngbDropdownItem><span class="flag in"></span>INDIA</button>
+            <button ngbDropdownItem><span class="flag ae"></span>AUE</button>
+            <button ngbDropdownItem><span class="flag us"></span>US</button>
+          </div>
+        </div>
+      </div>
       <div class="nav-container">
         <div class="navigation">
           <a class="navigation__item">
@@ -16,7 +27,7 @@
           </a>
           <a class="navigation__item">
             <span class="navigation__item__img villa"></span>
-            <span class="navigation__text">Villas & Apts</span>
+            <span class="navigation__text">Villas<span class="tablet-hide mobile-hide"> & Apts</span></span>
           </a>
           <a class="navigation__item">
             <span class="navigation__item__img ball"></span>
@@ -40,7 +51,7 @@
           </a>
           <a class="navigation__item">
             <span class="navigation__item__img charter"></span>
-            <span class="navigation__text">Charter Flights</span>
+            <span class="navigation__text">Charter<span class="tablet-hide mobile-hide"> Flights</span></span>
           </a>
           <div ngbDropdown class="d-inline-block">
             <div class="navigation__item more" id="dropdownBasic1" ngbDropdownToggle>
@@ -60,7 +71,7 @@
       </div>
     </div>
     <div class="container__right">
-      <div ngbDropdown>
+      <div ngbDropdown class="tablet-hide mobile-hide">
         <span id="dropdownBasic2" ngbDropdownToggle><span class="flag in"></span><span>INR</span></span>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
           <button ngbDropdownItem><span class="flag in"></span>INDIA</button>

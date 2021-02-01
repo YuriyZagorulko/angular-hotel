@@ -1,13 +1,17 @@
 .wrapper{
   display: flex;
   flex-direction: row;
+  max-height: calc(100vh - 200px);
   .map{
-    height: 600px;
     width: 100%;
   }
   .navigation{
     display: flex;
     flex-direction: column;
+    max-height: 100%;
+    overflow-y: scroll;
+    width: 420px;
+    min-width: 300px;
 
     ul{
       display: flex;
@@ -23,8 +27,34 @@
         }
       }
     }
+    .top{
+      padding-right: 20px;
+      padding-bottom: 20px;
+    }
   }
   .hotels{
     padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+
+}
+@media screen and (max-width: 800px) {
+  .wrapper{
+    flex-direction: column-reverse;
+    max-height: 600px;
+    height: 500px;
+    .map{
+      height: 300px;
+      padding-bottom: 20px;
+    }
+    .navigation{
+      width: 100%;
+
+      .top{
+        padding-right: 0;
+      }
+    }
   }
 }
