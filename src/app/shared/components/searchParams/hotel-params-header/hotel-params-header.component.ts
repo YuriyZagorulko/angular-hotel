@@ -49,7 +49,9 @@ export class HotelParamsHeaderComponent implements OnInit {
     'Eluru',
     'Kadapa',
   ];
-  constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) { }
+  constructor(private fb: FormBuilder,
+              private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
     this.placeForm = this.fb.group({
@@ -68,10 +70,6 @@ export class HotelParamsHeaderComponent implements OnInit {
   }
   openDatepicker(): void {
     this.pickerDirective.open();
-  }
-  setReason(reason): void {
-    console.log(reason);
-    this.reason = reason;
   }
   onRoomsChange(e): void{
     this.rooms = e;

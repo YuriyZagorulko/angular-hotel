@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Moment } from 'moment';
 import * as moment from 'moment';
 import {DaterangepickerDirective} from 'ngx-daterangepicker-material';
+import {Router} from '@angular/router';
 
 type dateRange = {
   startDate: Moment,
@@ -48,7 +49,9 @@ export class HotelsParamsComponent implements OnInit {
     'Eluru',
     'Kadapa',
   ];
-  constructor(private fb: FormBuilder, private cdr: ChangeDetectorRef) { }
+  constructor(private fb: FormBuilder,
+              private cdr: ChangeDetectorRef,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.placeForm = this.fb.group({
@@ -64,6 +67,7 @@ export class HotelsParamsComponent implements OnInit {
     console.log(this.reason);
     console.log(this.rooms);
     console.log(this.placeForm.value);
+    this.router.navigateByUrl('listing/hotels');
   }
   openDatepicker(): void {
     this.pickerDirective.open();
