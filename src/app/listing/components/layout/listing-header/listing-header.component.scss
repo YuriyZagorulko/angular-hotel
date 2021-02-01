@@ -132,7 +132,10 @@
     top: 0;
   }
 }
-
+.dropdown-toggle:hover, .dropdown-toggle:active
+{
+  color: #4a4a4a;
+}
 ::ng-deep{
   .dropdown-toggle {
     cursor: pointer;
