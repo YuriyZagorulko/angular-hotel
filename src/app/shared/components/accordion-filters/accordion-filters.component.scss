@@ -1,0 +1,46 @@
+.wrapper{
+  display: flex;
+  width: 100%;
+
+  .filters{
+    width: 100%;
+    margin-right: 0;
+
+    .popular,.price,.distance,.property-type{
+      padding: 20px 0;
+    }
+    .price{
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+      justify-content: center;
+
+
+      &__left input,&__right input{
+        border: 1px solid #d2d2d2;
+        border-radius: 4px;
+        outline: none;
+        transition: border .2s ease-in-out;
+        background-color: #fff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        font-size: 16px;
+        width: 60px;
+      }
+      &__numbers{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    &__title{
+      font-size: 15px;
+      line-height: 16px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

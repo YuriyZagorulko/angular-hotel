@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div class="filters">
+    <accordion [isAnimated]="true">
+      <accordion-group heading="Price">
+        <div class="price">
+          <div class="filters__title">Price Per Night</div>
+          <input type="range" min="{{priceMin}}" max="{{priceMax}}" [(ngModel)]="priceValue" (input)="logValue();"  id="myRange">
+          <div class="price__numbers">
+            <div class="price__left">₹ <input [(ngModel)]="priceValue"></div>
+            <div class="price__right">₹ <input  [(ngModel)]="priceMax"></div>
+          </div>
+        </div>
+      </accordion-group>
+      <accordion-group heading="Popular">
+        <div class="popular">
+          <div class="filters__title">Popular filters</div>
+          <app-checkbox-filter [filters]="popularFilters"></app-checkbox-filter>
+        </div>
+      </accordion-group>
+      <accordion-group heading="Star rating">
+        <div class="popular">
+          <div class="filters__title">Star rating</div>
+          <app-checkbox-filter [filters]="starFilters"></app-checkbox-filter>
+        </div>
+      </accordion-group>
+      <accordion-group heading="Distance">
+        <div class="distance">
+          <div class="filters__title">Distance from the centre of Delhi</div>
+          <app-checkbox-filter [filters]="distanceFilters"></app-checkbox-filter>
+        </div>
+      </accordion-group>
+    </accordion>
+  </div>
+</div>
