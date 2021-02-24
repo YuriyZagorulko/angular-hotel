@@ -42,8 +42,15 @@
   .children{
     padding-top: 5px;
   }
+  .bottom{
+    display: flex;
+    justify-content: space-between;
+    .apply{
+      display: flex;
+      margin-left: auto;
+    }
+  }
 }
-
 
 @media screen and (max-width: 1200px) and (min-width: 800px) {
 

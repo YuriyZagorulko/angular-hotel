@@ -58,8 +58,8 @@
         <div class="rooms__content">
           <div class="rooms__value" ngbDropdown #guestsDropdown="ngbDropdown">
             <span id="dropdownGuests" class="rooms__numbers" ngbDropdownToggle><strong>{{rooms?.length ? rooms.length : 0}}</strong> Rooms <strong>{{guestsNumber}}</strong> Guests </span>
-            <div ngbDropdownMenu aria-labelledby="dropdownGuests">
-              <app-guests (newValue)="onRoomsChange($event)"></app-guests>
+            <div ngbDropdownMenu aria-labelledby="dropdownGuests" #guestsDropdown>
+              <app-guests (newValue)="onRoomsChange($event)" (applyBtn)="closeGuests()"></app-guests>
             </div>
           </div>
         </div>

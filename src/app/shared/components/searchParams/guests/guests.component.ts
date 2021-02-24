@@ -8,6 +8,7 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angul
 })
 export class GuestsComponent implements OnInit {
   @Output() newValue = new EventEmitter<FormGroup>();
+  @Output() applyBtn =  new EventEmitter();
   guestsForm: FormGroup;
   controlId = 0;
   editId = 0;
@@ -69,7 +70,9 @@ export class GuestsComponent implements OnInit {
     }
     this.onFormChange();
   }
-
+  onApply(){
+    this.applyBtn.emit();
+  }
   getIndexOfRoom(trackingId: number): number{
     const control = this.guestsForm.controls.rooms as FormArray;
     // tslint:disable-next-line:forin

@@ -4,6 +4,7 @@ import { Moment } from 'moment';
 import * as moment from 'moment';
 import {DaterangepickerDirective} from 'ngx-daterangepicker-material';
 import {Router} from '@angular/router';
+import {NgbDropdown} from '@ng-bootstrap/ng-bootstrap';
 
 type dateRange = {
   startDate: Moment,
@@ -16,7 +17,7 @@ type dateRange = {
 })
 export class HotelsParamsComponent implements OnInit {
   @ViewChild(DaterangepickerDirective, { static: false }) pickerDirective: DaterangepickerDirective;
-  isSearchVisible = false;
+  @ViewChild('guestsDropdown') guestsDropdown: NgbDropdown;
   reasonDefault = 'Select a Reason (optional)';
   reason = '';
   selectedDate: dateRange;
@@ -80,6 +81,11 @@ export class HotelsParamsComponent implements OnInit {
       this.rooms = e;
       this.setNumberOfGuests();
       this.cdr.detectChanges();
+  }
+  closeGuests(): void{
+    setTimeout(() => {
+      this.guestsDropdown.close();
+    });
   }
   setNumberOfGuests(): void{
     this.guestsNumber = 0;
