@@ -2,6 +2,7 @@ import { IHotel } from '../types/hotels';
 
 export const hotelsList: IHotel [] = [
   {
+    id: 1,
     img: '',
     name: 'goStops Delhi',
     discountPrice: 777,
@@ -13,6 +14,7 @@ export const hotelsList: IHotel [] = [
     stars: 4
   },
   {
+    id: 2,
     img: 'assets/images/shared/hotel2.webp',
     name: 'Country Inn and Suites by Radisson, Sahibabad',
     discountPrice: 689,
@@ -24,6 +26,7 @@ export const hotelsList: IHotel [] = [
     stars: 3
   },
   {
+    id: 3,
     img: 'assets/images/shared/hotel3.webp',
     name: 'Vivanta New Delhi, Dwarka',
     discountPrice: 587,
@@ -35,6 +38,7 @@ export const hotelsList: IHotel [] = [
     stars: 2
   },
   {
+    id: 4,
     img: 'assets/images/shared/hotel4.webp',
     name: 'Airport Hotel Tashree',
     discountPrice: 587,
@@ -46,6 +50,7 @@ export const hotelsList: IHotel [] = [
     stars: 5
   },
   {
+    id: 5,
     img: 'assets/images/shared/hotel5.webp',
     name: 'Novotel New Delhi Aerocity',
     discountPrice: 587,

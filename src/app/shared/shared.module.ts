@@ -13,6 +13,7 @@ import { HotelParamsHeaderComponent } from './components/searchParams/hotel-para
 import { CheckboxFilterComponent } from './components/checkbox-filter/checkbox-filter.component';
 import { AccordionFiltersComponent } from './components/accordion-filters/accordion-filters.component';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
+import {RouterModule} from '@angular/router';
 
 
 
@@ -26,17 +27,18 @@ import {AccordionModule} from 'ngx-bootstrap/accordion';
     CheckboxFilterComponent,
     AccordionFiltersComponent
   ],
-  imports: [
-    CommonModule,
-    NgSelectModule,
-    ReactiveFormsModule,
-    NgxDaterangepickerMd.forRoot(),
-    FormsModule,
-    NgbDropdownModule,
-    NgbModule,
-    RatingModule,
-    AccordionModule,
-  ],
+    imports: [
+        CommonModule,
+        NgSelectModule,
+        ReactiveFormsModule,
+        NgxDaterangepickerMd.forRoot(),
+        FormsModule,
+        NgbDropdownModule,
+        NgbModule,
+        RatingModule,
+        AccordionModule,
+        RouterModule,
+    ],
     exports: [
         HotelsParamsComponent,
         GuestsComponent,

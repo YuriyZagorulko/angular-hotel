@@ -9,6 +9,8 @@ import {SharedModule} from '../shared/shared.module';
 import { MapModalComponent } from './components/shared/map-modal/map-modal.component';
 import {AgmCoreModule} from '@agm/core';
 import {FormsModule} from '@angular/forms';
+import {HotelPageComponent} from './components/hotel-page/hotel-page.component';
+import {SwiperModule} from 'swiper/angular';
 
 
 
@@ -17,15 +19,17 @@ import {FormsModule} from '@angular/forms';
     ListingHotelsComponent,
     ListingLayoutComponent,
     ListingHeaderComponent,
-    MapModalComponent
+    MapModalComponent,
+    HotelPageComponent
   ],
-    imports: [
-        CommonModule,
-        ListingRoutingModule,
-        NgbModule,
-        SharedModule,
-        AgmCoreModule,
-        FormsModule
-    ]
+  imports: [
+    CommonModule,
+    ListingRoutingModule,
+    NgbModule,
+    SharedModule,
+    AgmCoreModule,
+    FormsModule,
+    SwiperModule
+  ]
 })
 export class ListingModule { }

@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div [routerLink]="['/listing/hotel', hotel.id]" class="wrapper">
   <div class="left">
     <div class="left__image">
       <img src="{{hotel.img ? hotel.img : 'assets/images/shared/hotel.webp'}}">

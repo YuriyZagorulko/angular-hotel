@@ -28,6 +28,7 @@
     "ngx-bootstrap": "^6.2.0",
     "ngx-daterangepicker-material": "^4.0.1",
     "rxjs": "~6.5.5",
+    "swiper": "^6.4.15",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },

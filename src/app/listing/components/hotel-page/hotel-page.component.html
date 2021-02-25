@@ -1,0 +1,94 @@
+<div class="wrapper global-width-limiter">
+  <div class="head-links">
+    <a href="">Info & prices</a>
+    <a href="">Facilities</a>
+    <a href="">House rules</a>
+    <a href="">Guest reviews (929)</a>
+  </div>
+  <div class="images">
+    <div class="images__top">
+      <div class="img-container">
+        <img src="assets/images/prefill/hotel-page/259260775.webp">
+      </div>
+      <div class="img-container">
+        <img src="assets/images/prefill/hotel-page/259262309.webp">
+      </div>
+      <div class="img-container">
+        <img src="assets/images/prefill/hotel-page/259263765.webp">
+      </div>
+    </div>
+    <div class="images__bottom">
+      <div class="img-container">
+        <img src="assets/images/prefill/hotel-page/273030762.webp">
+      </div>
+      <div class="img-container">
+        <img src="assets/images/prefill/hotel-page/273030777.webp">
+      </div>
+      <div class="img-container">
+        <img src="assets/images/prefill/hotel-page/273030778.webp">
+      </div>
+      <div class="img-container">
+        <img src="assets/images/prefill/hotel-page/273030781.webp">
+      </div>
+      <div class="img-container">
+        <img src="assets/images/prefill/hotel-page/42807912.webp">
+      </div>
+      <div class="img-container with-number">
+        <img src="assets/images/prefill/hotel-page/273030784.webp">
+        <div class="number">
+          +45 photos
+        </div>
+      </div>
+    </div>
+    <div class="images-popup">
+      <div class="images-popup__top">
+        <div class="reviews">
+          <div class="reviews__left">
+            <div class="reviews__title">
+              Very Good
+            </div>
+            <div class="reviews__subtitle">
+              267 reviews
+            </div>
+          </div>
+          <div class="right">
+            <div class="rating">
+              8.4
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="images-popup__content">
+        <swiper
+          [slidesPerView]="1"
+          [spaceBetween]="50"
+          (swiper)="onSwiper($event)"
+          (slideChange)="onSlideChange()"
+          [navigation]="true"
+          [draggable]="false"
+          [touchRatio]="0"
+          [loop]="true"
+        >
+          <ng-template swiperSlide  *ngFor="let review of reviews">
+            <div class="review">
+              <div class="review__comment">
+                {{review.text}}
+              </div>
+              <div class="review__bottom"></div>
+            </div>
+          </ng-template>
+        </swiper>
+      </div>
+      <div class="images-popup__bottom">
+        <div class="single-review">
+          <div class="single-review__left">Excellent location!</div>
+          <div class="single-review__right">
+            <div class="rating white">
+              8.4
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

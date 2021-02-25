@@ -1,4 +1,5 @@
 export interface IHotel {
+  id: any;
   img: string;
   name: string;
   rating: number;
@@ -9,6 +10,13 @@ export interface IHotel {
   moreOptions: string [];
   place: string;
   amenities?: hotelAmenities;
+}
+export interface ISliderReview{
+  text: string;
+  avatar: string;
+  name: string
+  countryName: string;
+  flag: string;
 }
 export enum hotelAmenities{
   wifi = 0,
