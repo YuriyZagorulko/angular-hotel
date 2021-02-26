@@ -152,6 +152,35 @@
             padding: 10px 30px;
             background-color: rgb(235, 243, 255);
             font-size: 13px;
+            height: 100%;
+          }
+          &__bottom{
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+
+            &__right{
+              display: flex;
+              flex-direction: column;
+            }
+          }
+          &__avatar{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 20px;
+            color: #fff;
+          }
+          &__name{
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            justify-content: left;
+          }
+          &__country{
+            font-size: 12px;
+            display: flex;
+            justify-content: left;
           }
         }
       }
@@ -198,18 +227,29 @@
         line-height: 30px;
       }
     }
-  }
-}
-::ng-deep{
-  .swiper-button-prev,.swiper-button-next{
-    &:after{
-      font-size: 20px;
+    ::ng-deep{
+      .swiper-button-prev,.swiper-button-next{
+        &:after{
+          font-size: 20px;
+        }
+      }
+      .swiper-button-prev{
+        left: 0;
+      }
+      .swiper-button-next{
+        right: 0;
+      }
     }
   }
-  .swiper-button-prev{
-    left: 0;
-  }
-  .swiper-button-next{
-    right: 0;
+  .availability{
+    display: flex;
+    flex-direction: column;
+
+    h1{
+      margin: 24px 0 10px 0;
+      font-weight: 600;
+      font-size: 30px;
+    }
   }
 }
+

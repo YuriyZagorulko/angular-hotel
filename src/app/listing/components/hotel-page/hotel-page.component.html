@@ -74,7 +74,21 @@
               <div class="review__comment">
                 {{review.text}}
               </div>
-              <div class="review__bottom"></div>
+              <div class="review__bottom">
+                <div class="review__bottom__left">
+                  <div class="review__avatar" [style.background]="review.color">
+                    {{review.avatar}}
+                  </div>
+                </div>
+                <div class="review__bottom__right">
+                  <div class="review__name">
+                    {{review.name}}
+                  </div>
+                  <div class="review__country">
+                    {{review.countryName}}
+                  </div>
+                </div>
+              </div>
             </div>
           </ng-template>
         </swiper>
@@ -90,5 +104,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="availability">
+    <h1>Availability</h1>
+    <img src="assets/images/prefill/hotel-page/icons/air.svg">
   </div>
 </div>

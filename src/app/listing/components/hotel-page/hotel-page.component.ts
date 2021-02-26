@@ -4,6 +4,7 @@ import SwiperCore, {
   Navigation,
 } from 'swiper/core';
 import {reviews} from '../../../helpers/constants/hotel';
+import {ISliderReview} from '../../../helpers/types/hotels';
 
 SwiperCore.use([Navigation]);
 @Component({
@@ -12,7 +13,7 @@ SwiperCore.use([Navigation]);
   styleUrls: ['./hotel-page.component.scss']
 })
 export class HotelPageComponent implements OnInit {
-  reviews = reviews;
+  reviews: ISliderReview [] = reviews;
   constructor(public router: Router) { }
 
   ngOnInit(): void {

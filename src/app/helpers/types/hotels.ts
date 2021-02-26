@@ -17,6 +17,21 @@ export interface ISliderReview{
   name: string
   countryName: string;
   flag: string;
+  color: string
+}
+export interface IHotelRoom {
+  name: string;
+  facilitiesIcons: {img: string, title: string} [];
+  facilities: string [];
+  sleeps: number;
+  price: number;
+  additionalPrice: number;
+  quantity: {
+    options: number [];
+    selected: number;
+  };
+  rating: { score: number; description: string};
+  beds: {sofa: number, queen: number, normal: number, twin: number};
 }
 export enum hotelAmenities{
   wifi = 0,
