@@ -1,9 +1,9 @@
 <div class="wrapper global-width-limiter">
   <div class="head-links">
-    <a href="">Info & prices</a>
-    <a href="">Facilities</a>
-    <a href="">House rules</a>
-    <a href="">Guest reviews (929)</a>
+    <a>Info & prices</a>
+    <a>Facilities</a>
+    <a>House rules</a>
+    <a>Guest reviews (929)</a>
   </div>
   <div class="images">
     <div class="images__top">
@@ -107,6 +107,150 @@
   </div>
   <div class="availability">
     <h1>Availability</h1>
-    <img src="assets/images/prefill/hotel-page/icons/air.svg">
+    <div class="rooms">
+      <table class="rooms__table">
+        <thead>
+          <th>Accommodation Type</th>
+          <th>Sleeps</th>
+          <th>Today's Price</th>
+          <th>Your Choices</th>
+          <th>Select Rooms</th>
+        </thead>
+        <tr *ngFor="let room of hotelRooms; let i = index">
+          <td>
+            <div class="type">
+              <div class="name">
+                {{room.name}}
+              </div>
+              <div class="beds">
+                <div class="bed normal" *ngIf="room.beds.normal">
+                  1 bed
+                  <img src="assets/images/prefill/hotel-page/icons/bed.svg">
+                </div>
+                <div class="bed queen" *ngIf="room.beds.queen">
+                  1 queen bed
+                  <img src="assets/images/prefill/hotel-page/icons/bed-queen.svg">
+                </div>
+                <div class="bed twin" *ngIf="room.beds.twin">
+                  1 twin beds
+                  <img src="assets/images/prefill/hotel-page/icons/bed.svg">
+                  <img src="assets/images/prefill/hotel-page/icons/bed.svg">
+                </div>
+              </div>
+              <div class="facilities with-icons">
+                <div class="facility" *ngFor="let f of room.facilitiesIcons">
+                  <div class="facility__icon">
+                    <img [src]="f.img">
+                  </div>
+                  <div class="facility__name">{{f.title}}</div>
+                </div>
+                <div class="facility__review">
+                  <strong>- {{room.rating.score}} {{room.rating.description}} </strong>
+                </div>
+              </div>
+              <div class="facilities">
+                <div class="facility" *ngFor="let f of room.facilities">
+                  <i class="bi bi-check2"></i><div>{{f}}</div>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </td>
+          <td>
+            <div class="sleeps">
+              <div *ngFor="let p of room.sleeps " class="sleeps__person">
+                <i class="bi bi-person-fill"></i>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="price">
+              <div class="price__top">
+                US${{room.price}}
+              </div>
+              <div class="price__additional">
+                +US${{room.additionalPrice}} taxes and charges
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="choices">
+              <div class="choices__top">
+                <div class="choices__text">
+                  Total cost to cancel
+                </div>
+                <div class="question-mark" placement="top" [ngbTooltip]="tipContent">
+                  ?
+                </div>
+                <ng-template #tipContent>
+                  <p>
+                    <strong>Meals:</strong>
+                    No meal is included in this room rate.<br>
+                  </p>
+                  <p>
+                    <strong>
+                      Cancellation:
+                    </strong>
+                    You'll be charged the total price of the reservation if you cancel your booking.
+                  </p>
+                  <p>
+                    <strong>Prepayment:</strong>
+                    No prepayment is needed.
+                  </p>
+                </ng-template>
+              </div>
+              <div class="choices__content">
+                <div class="choices__content__icon">
+                  <i class="bi bi-check"></i>
+                </div>
+                <div class="choices__content__text">
+                  <strong>NO PREPAYMENT<br> NEEDED</strong> – pay at the property
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-primary" id="dropdownConfig{{i}}" ngbDropdownToggle>{{room.quantity.selected }}</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+                <button *ngFor="let q of room.quantity.options" value="q" (click)="setQuantity(room, q)" ngbDropdownItem>
+                  {{q}} {{q > 0 ? '(US$ ' + q * room.price + ')' : ''}}
+                </button>
+              </div>
+            </div>
+<!--            <select name="quantity">-->
+<!--              <option *ngFor="let q of room.quantity.options" value="q">{{q}}</option>-->
+<!--            </select>-->
+          </td>
+        </tr>
+      </table>
+      <div class="reserve">
+        <div class="reserve__top"></div>
+        <div class="reserve__content">
+          <div class="reserve__info" *ngIf="(totalInfo | async).price > 0">
+            <div class="reserve__info__rooms">
+              <strong>{{(totalInfo | async).rooms}}</strong> room for
+            </div>
+            <div class="reserve__info__price">US${{(totalInfo | async).price}}</div>
+            <div class="reserve__info__additional">+US${{(totalInfo | async).additional}} taxes and charges</div>
+          </div>
+          <button class="reserve btn">
+            I'll reserve
+          </button>
+          <div class="reserve__default">
+            <div class="" *ngIf="(totalInfo | async).price > 0">
+              Let's go to the next step
+            </div>
+            <ul>
+              <li>Confirmation is immediate</li>
+              <li>No registration required</li>
+              <li>No booking or credit card fees!</li>
+            </ul>
+          </div>
+          <ng-template class="reserve__chosen">
+          </ng-template>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

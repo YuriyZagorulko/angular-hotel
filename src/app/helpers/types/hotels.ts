@@ -14,16 +14,16 @@ export interface IHotel {
 export interface ISliderReview{
   text: string;
   avatar: string;
-  name: string
+  name: string;
   countryName: string;
   flag: string;
-  color: string
+  color: string;
 }
 export interface IHotelRoom {
   name: string;
   facilitiesIcons: {img: string, title: string} [];
   facilities: string [];
-  sleeps: number;
+  sleeps: number [];
   price: number;
   additionalPrice: number;
   quantity: {

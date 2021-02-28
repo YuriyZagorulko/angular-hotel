@@ -2,6 +2,7 @@
 @import '~bootstrap/scss/bootstrap';
 @import "~@ng-select/ng-select/themes/default.theme.css";
 @import '~swiper/swiper-bundle.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 @font-face {
   font-family: lato;
   src: url(assets/fonts/lato/Lato-Regular.ttf) format("opentype");
@@ -22,36 +23,6 @@ a{
   width: 1200px;
   max-width: 1200px;
   margin: 0 auto;
-}
-.dropdown-toggle{
-  border: none;
-  color: #fff;
-
-  &:hover, &:active {
-    color: #fff;
-    background: none;
-    border: none;
-  }
-  &:after{
-    margin-left: 15px;
-    border: solid #fff;
-    border-width: 0 2px 2px 0!important;
-    display: inline-block;
-    padding: 3px;
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(
-        45deg
-    );
-    -webkit-transform: rotate(
-        45deg
-    );
-    content: "";
-    position: relative;
-    top: 0;
-    right: 4px;
-  }
 }
 .swiper-container {
   width: 100%;

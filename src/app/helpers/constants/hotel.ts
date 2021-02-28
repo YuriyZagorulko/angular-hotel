@@ -57,23 +57,15 @@ const facilities1 = [
   'Toilet paper'
 ];
 const facilitiesIcons1: {img: string, title: string} [] = [
-  {title: 'Air conditioning', img: 'assets/images/prefill/hotel-page/icons/air.svg'},
+  {title: 'Air conditioning', img: 'assets/images/prefill/hotel-page/icons/air-conditioner.svg'},
   {title: 'Balcony', img: 'assets/images/prefill/hotel-page/icons/balcony.svg'},
-  {title: 'Flat-screen TV', img: 'assets/images/prefill/hotel-page/icons/tv.svg'},
+  {title: 'Flat-screen TV', img: 'assets/images/prefill/hotel-page/icons/television.svg'},
   {title: 'Free WiFi', img: 'assets/images/prefill/hotel-page/icons/wifi.svg'},
-  {title: 'Attached bathroom', img: 'assets/images/prefill/hotel-page/icons/bathroom.svg'},
-  {title: 'Flat-screen TV', img: 'assets/images/prefill/hotel-page/icons/tv.svg'},
-  {title: 'Flat-screen TV', img: 'assets/images/prefill/hotel-page/icons/tv.svg'},
-  {title: 'Flat-screen TV', img: 'assets/images/prefill/hotel-page/icons/tv.svg'},
-  {title: 'Flat-screen TV', img: 'assets/images/prefill/hotel-page/icons/tv.svg'},
+  {title: 'Attached bathroom', img: 'assets/images/prefill/hotel-page/icons/shower.svg'},
+  {title: 'City view', img: 'assets/images/prefill/hotel-page/icons/building.svg'},
+  {title: 'Minibar', img: 'assets/images/prefill/hotel-page/icons/minibar.svg'},
+  {title: 'Soundproof', img: 'assets/images/prefill/hotel-page/icons/no-sound.svg'},
 ];
-const quantity1: {
-  options: number [];
-  selected: number;
-} = {
-  options: [1,2,3],
-  selected: 0
-}
 export const hotelRooms: IHotelRoom [] = [
   {
     additionalPrice: 64,
@@ -83,11 +75,52 @@ export const hotelRooms: IHotelRoom [] = [
       sofa: 0,
       twin: 0,
     },
-    quantity: quantity1,
+    quantity: {
+      options: [0, 1, 2, 3],
+      selected: 0
+    },
     name: 'Standard Double or Twin Room',
     price: 250,
     rating: { score: 8.8, description: 'Excellent'},
-    sleeps: 2,
+    sleeps: [1, 2, 3],
+    facilities: facilities1,
+    facilitiesIcons: facilitiesIcons1
+  },
+  {
+    additionalPrice: 22,
+    beds: {
+      normal: 0,
+      queen: 0,
+      sofa: 0,
+      twin: 1,
+    },
+    quantity: {
+      options: [0, 1, 2, 3],
+      selected: 0
+    },
+    name: 'Standard Double or Twin Room',
+    price: 120,
+    rating: { score: 9.0, description: 'Excellent'},
+    sleeps: [1, 2],
+    facilities: facilities1,
+    facilitiesIcons: facilitiesIcons1
+  },
+  {
+    additionalPrice: 36,
+    beds: {
+      normal: 0,
+      queen: 1,
+      sofa: 0,
+      twin: 0,
+    },
+    quantity: {
+      options: [0, 1, 2, 3],
+      selected: 0
+    },
+    name: 'Standard Double or Twin Room',
+    price: 160,
+    rating: { score: 8.5, description: 'Excellent'},
+    sleeps: [1, 2],
     facilities: facilities1,
     facilitiesIcons: facilitiesIcons1
   }
