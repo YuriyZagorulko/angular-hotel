@@ -58,6 +58,17 @@ rating >span{
 .desktop-hide{
   display: none;
 }
+.card-blue{
+  background: #ebf3ff;
+  border: 1px solid #ebf3ff;
+  border-radius: 3px;
+  padding: 15px;
+}
+.card-green{
+  padding: 10px;
+  border-radius: 4px;
+  background: #d2edd5;
+}
 app-accordion-filters{
   width: 100%;
 }

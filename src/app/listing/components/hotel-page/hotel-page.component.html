@@ -234,7 +234,7 @@
             <div class="reserve__info__price">US${{(totalInfo | async).price}}</div>
             <div class="reserve__info__additional">+US${{(totalInfo | async).additional}} taxes and charges</div>
           </div>
-          <button class="reserve btn">
+          <button class="reserve btn" [routerLink]="['/listing/booking/']">
             I'll reserve
           </button>
           <div class="reserve__default">

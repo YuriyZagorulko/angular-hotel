@@ -1,0 +1,61 @@
+<div class="wrapper global-width-limiter" [formGroup]="bookingForm">
+  <h2>Enter your details</h2>
+  <div class="card-blue details">
+    <div class="card-green">
+      Almost done! Just fill in the <b>*</b> required info
+    </div>
+    <div class="group traveling">
+      <div class="group__row">
+        <div class="title">
+          Are you traveling for work?
+        </div>
+        <div class="traveling__control">
+          <input type="radio" id="yes" checked="true" name="gender" value="male">
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="gender" value="female">
+          <label for="no">No</label>
+        </div>
+      </div>
+    </div>
+    <div class="group">
+      <div class="group__row">
+        <label class="title" for="name">First Name <b>*</b></label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="group__row">
+        <label class="title" for="lastName">Last Name <b>*</b></label>
+        <input type="text" class="form-control" id="lastName">
+      </div>
+    </div>
+    <div class="group">
+      <div class="group__row">
+        <label class="title" for="email">Email Address <b>*</b></label>
+        <input type="email" class="form-control" id="email">
+        <div class="group__description">
+          Confirmation email sent to this address
+        </div>
+      </div>
+    </div>
+    <div class="group">
+      <div class="group__row">
+        <label class="title" for="confirmEmail">Confirm Email Address <b>*</b></label>
+        <input type="email" class="form-control" id="confirmEmail">
+      </div>
+    </div>
+    <div class="group centered">
+      <input type="radio" id="me" checked="true" name="reason" value="male">
+      <label for="me"> I'm the main guest</label>
+    </div>
+    <div class="group centered">
+      <input type="radio" id="other" checked="true" name="reason" value="male">
+      <label for="other">I'm booking for someone else</label>
+    </div>
+  </div>
+  <div class="card-blue room">
+    <h3>Standard Double or Twin Room</h3>
+    Total cost to cancel
+    <span class="question-mark" placement="top" [ngbTooltip]="'Prepayment:No prepayment is needed.'">
+      ?
+    </span>
+  </div>
+</div>

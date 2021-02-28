@@ -8,9 +8,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SharedModule} from '../shared/shared.module';
 import { MapModalComponent } from './components/shared/map-modal/map-modal.component';
 import {AgmCoreModule} from '@agm/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HotelPageComponent} from './components/hotel-page/hotel-page.component';
 import {SwiperModule} from 'swiper/angular';
+import {BookingComponent} from './components/booking/booking.component';
 
 
 
@@ -20,7 +21,8 @@ import {SwiperModule} from 'swiper/angular';
     ListingLayoutComponent,
     ListingHeaderComponent,
     MapModalComponent,
-    HotelPageComponent
+    HotelPageComponent,
+    BookingComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import {SwiperModule} from 'swiper/angular';
     SharedModule,
     AgmCoreModule,
     FormsModule,
-    SwiperModule
+    SwiperModule,
+    ReactiveFormsModule,
   ]
 })
 export class ListingModule { }
