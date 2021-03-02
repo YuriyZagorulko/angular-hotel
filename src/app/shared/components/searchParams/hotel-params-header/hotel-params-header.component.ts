@@ -3,6 +3,7 @@ import {DaterangepickerDirective} from 'ngx-daterangepicker-material';
 import * as moment from 'moment';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Moment} from 'moment';
+import {NgbCalendar, NgbDate, NgbInputDatepicker} from '@ng-bootstrap/ng-bootstrap';
 
 type dateRange = {
   startDate: Moment,
@@ -49,9 +50,18 @@ export class HotelParamsHeaderComponent implements OnInit {
     'Eluru',
     'Kadapa',
   ];
+
+  hoveredDate: NgbDate | null = null;
+
+  fromDate: NgbDate;
+  toDate: NgbDate | null = null;
   constructor(private fb: FormBuilder,
+              private calendar: NgbCalendar,
               private cdr: ChangeDetectorRef
-  ) { }
+  ) {
+    this.fromDate = calendar.getToday();
+    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
+  }
 
   ngOnInit(): void {
     this.placeForm = this.fb.group({
@@ -67,9 +77,6 @@ export class HotelParamsHeaderComponent implements OnInit {
     console.log(this.reason);
     console.log(this.rooms);
     console.log(this.placeForm.value);
-  }
-  openDatepicker(): void {
-    this.pickerDirective.open();
   }
   onRoomsChange(e): void{
     this.rooms = e;
@@ -92,6 +99,32 @@ export class HotelParamsHeaderComponent implements OnInit {
         select.open();
       }
     });
+  }
+
+  onDateSelection(date: NgbDate, datepicker: NgbInputDatepicker): void {
+    if (!this.fromDate && !this.toDate) {
+      this.fromDate = date;
+    } else if (this.fromDate && !this.toDate && date && date.after(this.fromDate)) {
+      this.toDate = date;
+    } else {
+      this.toDate = null;
+      this.fromDate = date;
+    }
+    if (this.fromDate && this.toDate) {
+      datepicker.toggle();
+    }
+  }
+
+  isHovered(date: NgbDate): boolean {
+    return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
+  }
+
+  isInside(date: NgbDate): boolean {
+    return this.toDate && date.after(this.fromDate) && date.before(this.toDate);
+  }
+
+  isRange(date: NgbDate): boolean {
+    return date.equals(this.fromDate) || (this.toDate && date.equals(this.toDate)) || this.isInside(date) || this.isHovered(date);
   }
 
 }

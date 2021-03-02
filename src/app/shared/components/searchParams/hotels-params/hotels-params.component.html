@@ -30,22 +30,36 @@
         </div>
         <div class="content__bottom">India</div>
       </div>
-      <div class="time ngx-daterangepicker-action" (click)="openDatepicker()">
-        <input type="text"
-               ngxDaterangepickerMd
-               [locale]="{format: 'DD/MM/YYYY HH:mm:ss', firstDay: 1}"
-               [(ngModel)]="selectedDate"
-               [showRangeLabelOnInput]="true"
-               [minDate]="minDate"
-                class="date-picker"/>
-        <div class="time__start ngx-daterangepicker-action">
+      <div class="time ngx-daterangepicker-action">
+        <input name="datepicker" class="date-picker" style="visibility: hidden;height: 0; width: 0; border: none; padding: 0"
+               class="form-control"
+               ngbDatepicker
+               #datepicker="ngbDatepicker"
+               [autoClose]="'outside'"
+               (dateSelect)="onDateSelection($event, datepicker);"
+               [displayMonths]="2"
+               [dayTemplate]="t"
+               outsideDays="hidden"
+               [startDate]="fromDate!"
+               tabindex="-1">
+        <ng-template #t let-date let-focused="focused">
+        <span class="custom-day"
+              [class.focused]="focused"
+              [class.range]="isRange(date)"
+              [class.faded]="isHovered(date) || isInside(date)"
+              (mouseenter)="hoveredDate = date"
+              (mouseleave)="hoveredDate = null">
+          {{ date.day }}
+        </span>
+        </ng-template>
+        <div class="time__start ngx-daterangepicker-action" (click)="datepicker.open()">
           <div class="content__title ngx-daterangepicker-action">CHECK-IN</div>
           <div class="time__date ngx-daterangepicker-action">
             {{selectedDate.startDate | date}}
           </div>
           <div class="content__bottom ngx-daterangepicker-action">{{selectedDate.startDate | date :'EEEE'}}</div>
         </div>
-        <div class="time__end ngx-daterangepicker-action">
+        <div class="time__end ngx-daterangepicker-action" (click)="datepicker.open()">
           <div class="content__title ngx-daterangepicker-action">CHECK-OUT</div>
           <div class="time__date ngx-daterangepicker-action">
             {{selectedDate.endDate | date}}
@@ -87,3 +101,4 @@
     SEARCH
   </button>
 </div>
+
