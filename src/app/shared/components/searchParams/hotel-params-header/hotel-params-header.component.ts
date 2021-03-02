@@ -1,5 +1,4 @@
 import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
-import {DaterangepickerDirective} from 'ngx-daterangepicker-material';
 import * as moment from 'moment';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Moment} from 'moment';
@@ -16,12 +15,8 @@ type dateRange = {
 })
 export class HotelParamsHeaderComponent implements OnInit {
 
-  @ViewChild(DaterangepickerDirective, { static: false }) pickerDirective: DaterangepickerDirective;
-  isSearchVisible = false;
-  reasonDefault = 'Select a Reason (optional)';
   reason = '';
   selectedDate: dateRange;
-  minDate = moment();
   placeForm: FormGroup;
   rooms: [{ adults: number; children: number; ages: number; trackingId: number}];
   guestsNumber = 0;

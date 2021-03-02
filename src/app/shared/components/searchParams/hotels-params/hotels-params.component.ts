@@ -2,7 +2,6 @@ import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Moment } from 'moment';
 import * as moment from 'moment';
-import {DaterangepickerDirective} from 'ngx-daterangepicker-material';
 import {Router} from '@angular/router';
 import {NgbCalendar, NgbDate, NgbDateParserFormatter, NgbDatepicker, NgbDropdown, NgbInputDatepicker} from '@ng-bootstrap/ng-bootstrap';
 
@@ -16,7 +15,6 @@ type dateRange = {
   styleUrls: ['./hotels-params.component.scss']
 })
 export class HotelsParamsComponent implements OnInit {
-  @ViewChild(DaterangepickerDirective, { static: false }) pickerDirective: DaterangepickerDirective;
   @ViewChild('guestsDropdown') guestsDropdown: NgbDropdown;
   reasonDefault = 'Select a Reason (optional)';
   reason = '';

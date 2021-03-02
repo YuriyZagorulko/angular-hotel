@@ -10,7 +10,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/layout/search/search.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NgxDaterangepickerMd} from 'ngx-daterangepicker-material';
 import {SharedModule} from './shared/shared.module';
 import { AgmCoreModule } from '@agm/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -29,7 +28,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     NgbModule,
     NgSelectModule,
     ReactiveFormsModule,
-    NgxDaterangepickerMd.forRoot(),
     FormsModule,
     SharedModule,
     BrowserAnimationsModule,
