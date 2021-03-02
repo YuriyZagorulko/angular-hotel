@@ -5,7 +5,7 @@
       Almost done! Just fill in the <b>*</b> required info
     </div>
     <div class="group traveling">
-      <div class="group__row">
+      <div class="group__column">
         <div class="title">
           Are you traveling for work?
         </div>
@@ -18,17 +18,17 @@
       </div>
     </div>
     <div class="group">
-      <div class="group__row">
+      <div class="group__column">
         <label class="title" for="name">First Name <b>*</b></label>
         <input type="text" class="form-control" id="name">
       </div>
-      <div class="group__row">
+      <div class="group__column">
         <label class="title" for="lastName">Last Name <b>*</b></label>
         <input type="text" class="form-control" id="lastName">
       </div>
     </div>
     <div class="group">
-      <div class="group__row">
+      <div class="group__column">
         <label class="title" for="email">Email Address <b>*</b></label>
         <input type="email" class="form-control" id="email">
         <div class="group__description">
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="group">
-      <div class="group__row">
+      <div class="group__column">
         <label class="title" for="confirmEmail">Confirm Email Address <b>*</b></label>
         <input type="email" class="form-control" id="confirmEmail">
       </div>
@@ -57,5 +57,65 @@
     <span class="question-mark" placement="top" [ngbTooltip]="'Prepayment:No prepayment is needed.'">
       ?
     </span>
+    <div class="cards">
+      <div class="card-green with-border"><img src="assets/images/prefill/hotel-page/icons/building.svg">City view</div>
+      <div class="card-green with-border"><img src="assets/images/prefill/hotel-page/icons/air-conditioner.svg">Air conditioning</div>
+      <div class="card-green with-border"><img src="assets/images/prefill/hotel-page/icons/balcony.svg">Balcony</div>
+      <div class="card-green with-border"><img src="assets/images/prefill/hotel-page/icons/television.svg">Flat-screen TV</div>
+      <div class="card-green with-border"><img src="assets/images/prefill/hotel-page/icons/wifi.svg">Free WiFi</div>
+      <div class="card-green with-border"><img src="assets/images/prefill/hotel-page/icons/shower.svg">Attached bathroom</div>
+      <div class="card-green with-border"><img src="assets/images/prefill/hotel-page/icons/minibar.svg">Minibar</div>
+      <div class="card-green with-border"><img src="assets/images/prefill/hotel-page/icons/no-sound.svg">Soundproof</div>
+    </div>
+    <div class="people">
+      <div class="title">Max people: </div>
+      <i class="bi bi-person"></i>
+      <i class="bi bi-person"></i>
+      +
+      <i class="bi bi-person small"></i>
+      <img src="assets/images/prefill/hotel-page/icons/no-smoking.svg">
+      No smoking
+    </div>
+    <div class="inputs">
+      <div class="group">
+        <div class="group__column">
+          <label class="guestName" for="name">Full Guest Name</label>
+          <input type="text" class="form-control" id="guestName">
+
+        </div>
+      </div>
+      <div class="group">
+        <div class="group__checkbox">
+          <input type="checkbox">
+          <div class="group__column">
+            <div class="title">Breakfast</div>
+            <div class="text">Yes we'd like breakfast during our stay at no additional cost</div>
+          </div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group__checkbox">
+          <input type="checkbox">
+          <div class="group__column">
+            <div class="title">I'm interested in requesting an airport shuttle</div>
+            <div class="text">We'll tell you accommodation that you're interested so they can provide details and costs</div>
+          </div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="group__checkbox">
+          <input type="checkbox">
+          <div class="group__column">
+            <div class="title">I'm interested in renting a car</div>
+            <div class="text">Make the most out of your trip and check car hire options in your booking confirmation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <button class="btn btn-primary">
+      Next: Final details
+    </button>
   </div>
 </div>

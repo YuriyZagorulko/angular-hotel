@@ -503,4 +503,196 @@
     }
   }
 }
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .wrapper{
+    .images {
+      grid-template-rows: 300px 150px;
 
+      .tablet-hide {
+        display: none;
+      }
+
+      &__top {
+        display: grid;
+        grid-template-rows: repeat(auto-fill, minmax(40%, 1fr));
+        grid-template-columns: 250px repeat(auto-fill, minmax(60%, 1fr));
+        grid-gap: 15px;
+
+      }
+    }
+    .availability {
+      .rooms {
+
+        &__table {
+          th {
+            &:nth-child(1) {
+              min-width: 200px;
+            }
+
+            &:nth-child(2) {
+              width: 70px;
+            }
+
+            &:nth-child(3) {
+              width: 50px;
+              text-align: center;
+            }
+
+            &:nth-child(4) {
+              width: 200px;
+            }
+
+            &:nth-child(5) {
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .wrapper {
+    .mobile-hide{
+      display: none;
+    }
+    .head-links {
+      flex-direction: column;
+      border: none;
+      a {
+        border-right: none;
+        border-bottom: 1px solid #fff;;
+      }
+    }
+    .images{
+      &__mobile {
+        display: flex;
+        width: 100%;
+        padding: 20px 15px;
+        height: 400px;
+
+        .img-container{
+          display: flex;
+          width: 100%;
+          height: 100%;
+
+          img{
+            display: flex;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    .availability{
+
+      &__mobile{
+        padding: 10px 15px;
+
+        .rooms {
+          .room {
+            border: 1px solid rgba(188,188,188,0.73);
+            padding: 10px;
+            margin-bottom: 15px;
+
+            &__up-to{
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+            }
+            .sleeps{
+
+              &__person{
+                display: flex;
+                flex-wrap: wrap;
+              }
+            }
+            &__title{
+              color: #0071c2;
+              text-decoration: underline;
+              font-weight: bold;
+            }
+            .facilities {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              .facility {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                border: 1px solid #333;
+                margin-right: 10px;
+                padding: 4px;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                align-items: center;
+                &__icon {
+                  height: 15px;
+                  width: 15px;
+                  display: flex;
+                  margin: 0 3px;
+
+                  img {
+                  }
+                }
+
+                &__name {
+                  font-size: 14px;
+                }
+              }
+            }
+            .choices{
+              display: flex;
+              flex-direction: row;
+
+              i{
+                color: #008009;
+              }
+            }
+            .beds{
+
+              .bed{
+                display: flex;
+
+                img{
+                  display: flex;
+                  width: 15px;
+                  height: 15px;
+                  align-self: center;
+                  margin-left: 10px;
+                }
+              }
+            }
+            .price{
+              display: flex;
+              flex-direction: row;
+
+              &__left{
+                display: flex;
+                flex-direction: column;
+              }
+              &__top{
+                color: #008009;
+                font-size: 20px;
+                font-weight: bold;
+              }
+              &__additional{
+                font-size: 14px;
+                font-weight: 300;
+                color: #6b6b6b;
+              }
+              &__right{
+                button{
+                  background-color: #fff;
+                  color: #0071c2;
+                  border-color: #0071c2;
+                  padding: 15px 25px;
+                  margin: 20px 0 0 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -25,6 +25,49 @@
   #email,#confirmEmail{
     width: 300px;
   }
+  .cards {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    .card-green {
+      color: #006607;
+      padding: 2px;
+      margin-right: 5px;
+      img{
+        height: 15px;
+        width: 15px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .people{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+    img{
+      height: 25px;
+      width: 25px;
+      margin: 0 10px;
+    }
+    i{
+      font-size: 22px;
+
+      &.small{
+        font-size: 18px;
+      }
+    }
+  }
+  .bottom{
+    justify-content: flex-end;
+    padding-top: 20px;
+    button{
+      margin-left: auto;
+      display: flex;
+      background-color: #4c76b2;
+      font-size: 18px;
+    }
+  }
   .title{
     font-weight: bold;
   }
@@ -45,10 +88,23 @@
     &__description{
       font-style: italic;
     }
-    &__row{
+    &__column{
       display: flex;
       flex-direction: column;
       margin-right: 20px;
+    }
+    &__checkbox{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      border-top: 1px solid #ddd;
+      width: 100%;
+      padding: 10px 0;
+
+      input{
+        margin-right: 20px;
+      }
     }
   }
   .traveling{

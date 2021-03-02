@@ -68,6 +68,10 @@ rating >span{
   padding: 10px;
   border-radius: 4px;
   background: #d2edd5;
+
+  &.with-border{
+    border: 1px solid #97e59c;
+  }
 }
 app-accordion-filters{
   width: 100%;
@@ -89,6 +93,9 @@ app-accordion-filters{
 }
 @media screen and (max-width: 800px) {
   .desktop-hide{
+    display: flex;
+  }
+  .tablet-hide{
     display: flex;
   }
   .global-width-limiter{
